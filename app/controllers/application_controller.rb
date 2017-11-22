@@ -19,4 +19,13 @@ class ApplicationController < ActionController::Base
   def require_login
     logged_in?
   end
+
+  def logout
+    if logged_in?
+      current_user.reset_session_token!
+      session[:session_token] = nil
+    else
+      render json: ["Must be signed in to log out"], status: 404
+    end
+  end
 end

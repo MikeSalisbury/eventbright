@@ -6,17 +6,16 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login(@user)
-      render json: @user
+      render :show
     else
-      render json: ["Invalid Credentials"]
+      render json: ["Invalid Credentials"], status: 404
     end
 
 
   end
 
   def destroy
-    current_user.reset_session_token!
-    session[:session_token] = nil
+    logout
   end
 
 end
