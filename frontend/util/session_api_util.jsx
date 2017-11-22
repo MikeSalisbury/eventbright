@@ -1,0 +1,29 @@
+export const login = (user) => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/session',
+    data: { user }
+  })
+);
+
+export const fetchUser = (id) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${id}`,
+  })
+);
+
+export const signup = (user) => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/users',
+    data: { user }
+  })
+);
+
+export const logout = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/session/${id}`
+  })
+);
