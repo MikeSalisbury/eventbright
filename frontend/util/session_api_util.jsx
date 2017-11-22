@@ -6,10 +6,11 @@ export const login = (user) => (
   })
 );
 
-export const fetchUser = (id) => (
+export const emailCheck = (email) => (
   $.ajax({
     method: 'GET',
-    url: `/api/users/${id}`,
+    url: `/api/email/`,
+    data: email 
   })
 );
 

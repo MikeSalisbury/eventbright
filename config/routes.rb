@@ -8,4 +8,7 @@ root to: 'static_pages#root'
     resource :session, only: [:create, :destroy]
   end
 
+get '/api/email/', to: 'api/users#email', as: 'emailCheck',
+ defaults: {format: :json}
+
 end

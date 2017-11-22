@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import SessionContainer from './session_form/session_form_container';
+import SigninFormContainer from './session_form/signin_form_container';
 
 const App = ({store}) => (
   <div>
-    <Route path='/signin/login' component={SessionContainer} />
-    <Route path='/signin/signup' component={SessionContainer} />
+    <Route exact path='/signin' component={SigninFormContainer} />
+    <Route exact path='/signin/login' component={SessionContainer} />
+    <Route exact path='/signin/signup' component={SessionContainer} />
   </div>
 );
 

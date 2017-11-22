@@ -1,12 +1,17 @@
 import React from 'react';
 
-
 class sessionForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {email: "", password: "", first_name: "", last_name: ""};
+    this.state = {email: `${props.validEmail}`, password: "", first_name: "", last_name: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/');
+    }
   }
 
   update(prop) {
@@ -20,7 +25,7 @@ class sessionForm extends React.Component {
   }
 
   signupForm() {
-    if (this.props.formType === 'signup') {
+    if (this.props.formType === 'Sign Up') {
       return (
       <div>
         <label>First Name:

@@ -4,7 +4,8 @@ import { login, signup, logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
-  errors: state.errors.session
+  errors: state.errors.session,
+  validEmail: state.ui.validEmail.email
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -12,10 +13,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let formType;
   if (ownProps.match.path === '/signin/login') {
     action = user => dispatch(login(user));
-    formType = 'login';
+    formType = 'Login';
   } else  {
     action = user => dispatch(signup(user));
-    formType = 'signup';
+    formType = 'Sign Up';
   }
 
   return {
