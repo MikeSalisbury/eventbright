@@ -28,18 +28,31 @@ class signinForm extends React.Component {
     this.props.emailCheck(this.state);
   }
 
+
+
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email:
+      <div className="signin-login">
+        <img></img>
+        <header className="header-font">
+          <h3>Let's get Started!</h3>
+          <h4>Enter your Email to sign up or log in</h4><br/>
+        </header>
+        <div className="signin-login-form">
+          <form onSubmit={this.handleSubmit}>
+            <label>Email:<br />
             <input
               type="text"
               onChange={this.update('email')}
-              value={this.state.email}/>
+              value={this.state.email}
+              className="signin-login-input"/>
           </label>
-          <input type="submit" value="Sign in"/>
-        </form>
+          <input
+            type="submit"
+            value="Sign in"
+            className="submit-button"/>
+          </form>
+        </div>
       </div>
     );
   }
