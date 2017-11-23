@@ -13,6 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ .navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+ }
+
+ .rightnav {
+   display: flex;
+ }
+
+ .nav {
+   display: flex;
+   padding-right: 15px;
+   padding-left: 15px;
+   border-right: 1px solid black;
+ }
+
+ .nav:last-child {
+   border-right: 0px
+ }
+
  .signin-login{
    display: flex;
    flex-direction: column;
