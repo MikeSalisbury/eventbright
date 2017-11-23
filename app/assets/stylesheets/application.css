@@ -45,7 +45,7 @@
  }
 
  .header-font {
-   display
+   display: flex;
    font-weight: normal;
  }
 
