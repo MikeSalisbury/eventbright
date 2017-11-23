@@ -13,25 +13,66 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   width: 100%;
+   margin: 0;
+   color: black;
+   background-color: lightgray;
+ }
+
  .navbar {
    display: flex;
    justify-content: space-between;
-   align-items: baseline;
+   height: 61px;
+   border-bottom: 1px solid lightgray;
+   position: relative;
+   background-color: white;
  }
 
  .rightnav {
    display: flex;
+   font-size: 16px;
+   color: gray;
+   font-family:sans-serif;
+   margin: 0;
+ }
+
+ .logo {
+   font-size: 20px;
+   font-weight: bold;
+   padding: 15px 0px 15px 20px;
+   border-right: 1px solid lightgray;
+   height: 33px;
+   width: 100%;
+   color: #f47d42;
+   font-family: "Comic Sans MS", sans-serif;
+ }
+
+ .create-event {
+   color: #0278b8;
  }
 
  .nav {
    display: flex;
-   padding-right: 15px;
-   padding-left: 15px;
-   border-right: 1px solid black;
+   padding: 22px 23px;
+   border-left: 1px solid lightgray;
+
  }
 
  .nav:last-child {
    border-right: 0px
+ }
+
+ h3.nav {
+  margin: 0;
+  margin: 0;
+  border-top: 0px;
+  border-bottom: 0px;
+  height: 17px;
+ }
+
+ .nav-help {
+   width: 33px;
  }
 
  .signin-login{
@@ -39,14 +80,21 @@
    flex-direction: column;
    align-items: center;
    padding: 20px;
-   height: 80%;
-   width: 80%;
-   border: 2px solid black;
+   border: 1px solid black;
+   height: 500px;
+   width: 500px;
+   justify-content:center;
  }
 
  .header-font {
-   display: flex;
    font-weight: normal;
+ }
+
+ .login-img {
+   border: 1px solid black;
+   height: 100px;
+   width: 100px;
+   border-radius: 50%
  }
 
  .signin-login-form {
@@ -56,12 +104,17 @@
  }
 
  .signin-login-input {
-
+   border: 1px solid black;
+   margin: 10px;
  }
 
  .submit-button {
+   display: flex;
+   justify-content: center;
    border: 1px solid black;
    width: 50%;
    border-radius: 5px;
    padding: 5px;
+   background-color: #f47d42;
+   color: white;
  }

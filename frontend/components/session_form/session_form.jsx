@@ -56,13 +56,15 @@ class sessionForm extends React.Component {
           <input
             type='text'
             onChange={this.update('first_name')}
-            value={this.state.first_name} />
+            value={this.state.first_name}
+            className="signin-login-input"/>
         </label>
         <label>Last Name:
           <input
             type='text'
             onChange={this.update('last_name')}
-            value={this.state.last_name} />
+            value={this.state.last_name}
+            className="signin-login-input"/>
         </label>
       </div>
     );
@@ -72,8 +74,9 @@ class sessionForm extends React.Component {
   render() {
     return (
       <div className="signin-login">
+        <img className='login-img'></img>
+        {this.handleHeader()}
         <div className="signin-login-form">
-          {this.handleHeader()}
           <form onSubmit={this.handleSubmit}>
             <label>Email:
               <input

@@ -33,7 +33,7 @@ class signinForm extends React.Component {
   render() {
     return (
       <div className="signin-login">
-        <img></img>
+        <img className='login-img'></img>
         <header className="header-font">
           <h3>Let's get Started!</h3>
           <h4>Enter your Email to sign up or log in</h4><br/>
