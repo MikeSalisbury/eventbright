@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
         login(@user)
         render json: @user
       else
-        render json: @user.errors.full_messages
+        render json: @user.errors.full_messages, status: 404
       end
     end
 
@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
       if @user.update_attributes(user_params)
         render json: @user
       else
-        render json: @user.errors.full_messages
+        render json: @user.errors.full_messages, status: 404
       end
     end
 

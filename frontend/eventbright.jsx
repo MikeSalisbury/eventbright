@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { configureStore } from './store/store';
-import { login, signup, logout, emailCheck } from './actions/session_actions';
+import { login, signup, logout, emailCheck, demoLogin} from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -20,5 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.emailCheck = emailCheck;
   window.dispatch = store.dispatch;
+  window.demoLogin = demoLogin;
   ReactDOM.render(<Root store={store}/>, root);
 });

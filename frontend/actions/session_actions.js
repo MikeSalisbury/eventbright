@@ -3,6 +3,7 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RECEIVE_VALID_EMAIL = 'RECEIVE_VALID_EMAIL';
+export const RECEIVE_DEMO_USER = 'RECEIVE_DEMO_USER';
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -19,6 +20,11 @@ export const receiveValidEmail = (validEmail) => ({
   validEmail
 });
 
+export const receiveDemoUser = (demoUser) => ({
+  type: RECEIVE_DEMO_USER,
+  demoUser
+});
+
 export const emailCheck = (email) => dispatch => (
   APIUtil.emailCheck(email)
   .then(validEmail => dispatch(receiveValidEmail(validEmail)))
@@ -28,6 +34,11 @@ export const login = (user) => dispatch => (
   APIUtil.login(user)
   .then(newUser => dispatch(receiveCurrentUser(newUser)),
    err => dispatch(receiveSessionErrors(err.responseJSON)))
+);
+
+export const demoLogin = (demoUser) => dispatch => (
+  APIUtil.login(demoUser)
+  .then(user => dispatch(receiveDemoUser(user)))
 );
 
 export const signup = (user) => dispatch => (

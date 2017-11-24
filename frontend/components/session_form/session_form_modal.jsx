@@ -56,6 +56,7 @@ class sessionModal extends React.Component {
       form = <SigninFormContainer
         ui={this.props.ui}
         errors={this.props.errors}
+        demoLogin={this.props.demoLogin}
       />;
     }
 
@@ -76,12 +77,10 @@ class sessionModal extends React.Component {
           onRequestClose={this.closeModal}
           afterOpen={this.afterOpen}
           contentLabel="Sign In">
-          <div onClick={this.closeModal}>
-            <span className="close-modal">&times;</span>
-          </div>
-          <div className="form-display">
-            {form}
-          </div>
+            <div onClick={this.closeModal}>
+              <span className="close-modal">&times;</span>
+            </div>
+          {form}
         </Modal>
       </div>
     );

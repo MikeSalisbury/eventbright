@@ -1,7 +1,6 @@
-//import SessionForm from './session_form';
 import SessionFormModal from './session_form_modal';
 import { connect } from 'react-redux';
-import { login, signup, logout } from '../../actions/session_actions';
+import { login, signup, logout, demoLogin } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
@@ -25,6 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     action,
+    demoLogin: user => dispatch(demoLogin(user)),
     formType
   };
 };

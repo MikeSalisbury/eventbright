@@ -34,15 +34,15 @@ class sessionForm extends React.Component {
     if (this.props.formType === 'Sign Up') {
       return (
         <header className="header-font">
-          <h3>Welcome</h3>
-          <h4>Create an account.</h4><br/>
+          <h3 className="login-header">Welcome</h3>
+          <h4 className="login-subheader">Create an account.</h4><br/>
         </header>
       );
     } else {
       return (
         <header className="header-font">
-          <h3>Welcome Back!</h3>
-          <h4>Please enter your password to log in</h4><br/>
+          <h3 className="login-header">Welcome Back!</h3>
+          <h4 className="login-subheader">Please enter your password to log in</h4><br/>
         </header>
       );
     }
@@ -51,48 +51,63 @@ class sessionForm extends React.Component {
   signupForm() {
     if (this.props.formType === 'Sign Up') {
       return (
-      <div>
-        <label>First Name:
+      <div className="additional-info">
+        <label>First Name
           <input
             type='text'
             onChange={this.update('first_name')}
             value={this.state.first_name}
-            className="signin-login-input"/>
+            className="signin-login-name"/>
         </label>
-        <label>Last Name:
+        <label>Last Name
           <input
             type='text'
             onChange={this.update('last_name')}
             value={this.state.last_name}
-            className="signin-login-input"/>
+            className="signin-login-name"/>
         </label>
       </div>
     );
     }
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div className="signin-login">
-        <img className='login-img'></img>
+        <span className='login-img'>Eb</span>
         {this.handleHeader()}
         <div className="signin-login-form">
-          <form onSubmit={this.handleSubmit}>
-            <label>Email:
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <div className="session-errors">
+              {this.renderErrors()}
+            </div>
+            <label>Email
               <input
                 type='email'
                 onChange={this.update('email')}
                 value={this.state.email}
                 className="signin-login-input"/>
             </label>
-            <label>Password:
+            {this.signupForm()}
+            <label>Password
               <input
                 type='password'
                 onChange={this.update('password')}
                 value={this.state.password}
                 className="signin-login-input"/>
             </label>
-            {this.signupForm()}
             <input
               type='submit'
               value={this.props.formType}

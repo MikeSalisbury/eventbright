@@ -8,6 +8,7 @@ class signinForm extends React.Component {
     super(props);
     this.state = {email: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,30 +29,41 @@ class signinForm extends React.Component {
     this.props.emailCheck(this.state);
   }
 
+  handleDemo(e) {
+    e.preventDefault;
+    this.props.demoLogin({email:"ben@gmail.com", password:"password"});
+    this.props.history.push('/');
+  }
+
 
 
   render() {
     return (
       <div className="signin-login">
-        <img className='login-img'></img>
+        <span className='login-img'>EB</span>
         <header className="header-font">
-          <h3>Let's get Started!</h3>
-          <h4>Enter your Email to sign up or log in</h4><br/>
+          <h3 className="login-header">Let's get Started!</h3>
+          <h4 className="login-subheader">Enter your email to sign up or log in</h4><br/>
         </header>
-        <div className="signin-login-form">
-          <form onSubmit={this.handleSubmit}>
-            <label>Email:<br />
+        <div className="signin-form">
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <label>Email address<br />
             <input
               type="text"
               onChange={this.update('email')}
+              placeholder="Enter email"
               value={this.state.email}
               className="signin-login-input"/>
           </label>
           <input
             type="submit"
-            value="Sign in"
+            value="Get Started"
             className="submit-button"/>
           </form>
+        </div>
+        <div className="demo-div">
+          <button className ="demoLogin"
+            onClick={this.handleDemo}>Demo Login</button>
         </div>
       </div>
     );

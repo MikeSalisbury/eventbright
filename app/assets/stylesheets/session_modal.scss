@@ -2,13 +2,33 @@
 //     overflow: hidden;
 // }
 
-.form-display {
-  width: 80%;
-  height: 80%;
-}
+// .form-display {
+//   width: 80%;
+//   height: 80%;
+// }
+
+// .modal-window {
+//   position: fixed;
+//   width: 800px;
+// }
 
 .close-modal {
-background-color: lightgray;
+background-color: rgba(248,248,250,.7);
+color: gray;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+height: 26px;
+width: 26px;
+font-size: 20px;
+padding: 5px;
+line-height: 1;
+cursor: pointer;
+position: absolute;
+top: 20px;
+right: 20px;
+z-index: 1;
 }
 
 .base {
@@ -19,6 +39,12 @@ background-color: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 .afterOpen {

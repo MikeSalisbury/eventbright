@@ -18,6 +18,7 @@
    margin: 0;
    color: black;
    background-color: lightgray;
+   font-family: sans-serif;
  }
 
  .navbar {
@@ -25,7 +26,6 @@
    justify-content: space-between;
    height: 61px;
    border-bottom: 1px solid lightgray;
-   position: relative;
    background-color: white;
  }
 
@@ -44,7 +44,7 @@
    border-right: 1px solid lightgray;
    height: 33px;
    width: 100%;
-   color: #f47d42;
+   color: #f6682f;
    font-family: "Comic Sans MS", sans-serif;
  }
 
@@ -65,10 +65,17 @@
 
  h3.nav {
   margin: 0;
-  margin: 0;
   border-top: 0px;
   border-bottom: 0px;
   height: 17px;
+ }
+
+ h3.nav:hover {
+   background-color: lightgray;
+ }
+
+ h3.nav:hover:last-child {
+   background-color: white;
  }
 
  .nav-help {
@@ -79,22 +86,57 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding: 20px;
-   border: 1px solid black;
-   height: 500px;
-   width: 500px;
+   /*padding: 20px;*/
+   height: 100%;
+   width: 100%;
    justify-content:center;
+   background-color: white;
+   position: relative;
  }
 
  .header-font {
    font-weight: normal;
+   text-align: center;
+ }
+
+ .login-header {
+  font-size: 24px;
+  color: gray;
+  font-weight: 100;
+  padding: 5px;
+ }
+
+ .login-subheader {
+  font-size: 14px;
+  color: gray;
+  font-weight: 100;
+  margin-bottom: 20px;
  }
 
  .login-img {
-   border: 1px solid black;
-   height: 100px;
-   width: 100px;
-   border-radius: 50%
+   height: 75px;
+   width: 75px;
+   border-radius: 50%;
+   margin: 20px;
+   background-color: #F6682F;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 24px;
+   font-family: "Comic Sans MS", sans-serif;
+   -webkit-animation: bounce 0.75s infinite
+ }
+
+ .session-form {
+   width: 80%
+ }
+
+ .signin-form {
+   width: 60%;
+   display: flex;
+   align-items: center;
+   flex-direction: column
  }
 
  .signin-login-form {
@@ -104,17 +146,78 @@
  }
 
  .signin-login-input {
-   border: 1px solid black;
-   margin: 10px;
+   border: 1px solid lightgray;
+   margin: 5px 0px 5px 0px;
+   border-radius: 5px;
+   padding: 12px;
+   margin-bottom: 10px;
+   color: black;
+   width: 100%
+ }
+
+ .signin-login-input::placeholder {
+   color: lightgray;
+ }
+
+ .signin-login-input:focus {
+   border: 1px solid #40E0D0;
  }
 
  .submit-button {
    display: flex;
    justify-content: center;
-   border: 1px solid black;
-   width: 50%;
-   border-radius: 5px;
+   width: 100%;
+   border-radius: 15px;
    padding: 5px;
-   background-color: #f47d42;
+   background-color: #F6682F;
    color: white;
+   padding: 12px;
+ }
+
+ .submit-button:hover {
+   background-color: #FD348B;
+ }
+
+ .demo-div {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .demoLogin {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   border-radius: 15px;
+   padding: 5px;
+   background-color: #F6682F;
+   color: white;
+   padding: 12px;
+   margin-top: 15px;
+ }
+
+ .demoLogin:hover {
+   background-color: #FD348B;
+ }
+
+ .session-errors {
+   font-weight: bold;
+   margin: 2px;
+   color: #F6682F;
+ }
+
+ .additional-info {
+   display: flex;
+   justify-content: space-between;
+   width: 111%;
+ }
+
+ .signin-login-name {
+   border: 1px solid lightgray;
+   margin: 5px 0px 5px 0px;
+   border-radius: 5px;
+   padding: 12px;
+   margin-bottom: 10px;
+   color: black;
+   width: 80%
  }
