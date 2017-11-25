@@ -19,6 +19,7 @@ class Api::SessionsController < ApplicationController
       logout
     else
       render json: ["Must be logged in"], status: 404
+    end
   end
 
 end
