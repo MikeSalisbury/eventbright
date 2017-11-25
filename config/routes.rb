@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:show, :create, :update]
+    resources :users, only: [:show, :create, :update] do
+      resources :events, only: [:index]
+    end
     resource :session, only: [:create, :destroy]
+    resources :events, only: [:index, :show, :create, :update, :destroy]
   end
 
 get '/api/email/', to: 'api/users#email', as: 'emailCheck',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import SessionContainer from './session_form/session_form_container';
-import SigninFormContainer from './session_form/signin_form_container';
+import SessionContainer from './session/session_form_container';
+import SigninFormContainer from './session/signin_form_container';
 import NavBarContainer from './navbar/navbar_container';
 
 const App = ({store}) => (

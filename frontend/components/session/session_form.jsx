@@ -10,6 +10,7 @@ class sessionForm extends React.Component {
     } else {
       email = "";
     }
+
     this.state = {email: email, password: "", first_name: "", last_name: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -20,6 +21,12 @@ class sessionForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+    this.setState({email: '', password: '',
+       first_name: '', last_name: ''});
+  }
+
   update(prop) {
     return (e) =>
       this.setState({[prop]: e.target.value});
@@ -28,6 +35,7 @@ class sessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault;
     this.props.action(this.state);
+    this.props.history.push('/');
   }
 
   handleHeader() {

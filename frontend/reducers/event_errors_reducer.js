@@ -1,14 +1,14 @@
-import { RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_EVENT_ERRORS, RECEIVE_EVENT } from '../actions/event_actions';
 import { CLEAR_ERRORS } from '../actions/error_actions';
 
 const _nullErrors = [];
 
-const sessionErrorsReducer = (state = _nullErrors, action) => {
+const eventErrorsReducer = (state = _nullErrors, action) => {
   Object.freeze(state);
   switch(action.type) {
-    case RECEIVE_SESSION_ERRORS:
+    case RECEIVE_EVENT_ERRORS:
       return action.errors;
-    case RECEIVE_CURRENT_USER:
+    case RECEIVE_EVENT:
       return _nullErrors;
     case CLEAR_ERRORS:
       return _nullErrors;
@@ -17,4 +17,4 @@ const sessionErrorsReducer = (state = _nullErrors, action) => {
   }
 };
 
-export default sessionErrorsReducer;
+export default eventErrorsReducer;
