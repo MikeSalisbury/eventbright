@@ -4,5 +4,5 @@ import eventErrorsReducer from './event_errors_reducer';
 
 export default combineReducers({
   session: sessionErrorsReducer,
-  events: eventErrorsReducer
+  event: eventErrorsReducer
 });

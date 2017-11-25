@@ -50,7 +50,8 @@ class Api::EventsController < ApplicationController
 
   def event_params
     params.require[:event].permit[:title, :description, :location,
-      :start_datetime, :end_datetime, :img_url, :category, :privacy]
+      :start_datetime, :end_datetime, :img_url, :category, :privacy,
+      :event_type, :event_topic]
   end
 
 end

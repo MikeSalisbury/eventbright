@@ -8,7 +8,7 @@ export default ({currentUser, logout}) => {
         <h3 className='nav nav-help'><Link to='/'>Help</Link></h3>
         <h3 className='nav'><Link to='/'>User</Link></h3>
         <h3 className='nav'><button onClick={logout}>Logout</button></h3>
-        <h3 className='nav create-event'><Link to='/'>
+        <h3 className='nav create-event'><Link to='/events/create'>
           Create Event</Link></h3>
     </div>
   ) : (
@@ -16,7 +16,7 @@ export default ({currentUser, logout}) => {
       <h3 className='nav'><Link to='/'>Browse Events</Link></h3>
       <h3 className='nav nav-help'><Link to='/'>Help</Link></h3>
       <h3 className='nav'><Link to='/signin'>Sign In</Link></h3>
-      <h3 className='nav create-event'><Link to='/'>
+      <h3 className='nav create-event'><Link to='/events/create'>
           Create Event</Link></h3>
     </div>
   );
