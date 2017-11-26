@@ -1,18 +1,21 @@
 import { connect } from 'react-redux';
 import EventForm from './event_form';
-import { createEvent, updateEvent, deleteEvent } from '../../actions/event_actions';
+import { fetchEvent, createEvent, updateEvent, deleteEvent } from '../../actions/event_actions';
 import { clearErrors } from '../../actions/error_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   let event;
+  const errors = state.errors.event;
+  const eventId = ownProps.match.params.eventId;
+  
   if (ownProps.match.path === '/events/:eventId/edit') {
     event = state.entities.events[ownProps.match.params.eventId];
   }
-  const errors = state.errors.event;
 
   return {
     event,
+    eventId,
     errors
   };
 
@@ -33,7 +36,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     action,
     formType,
     clearErrors: () => dispatch(clearErrors()),
-    deleteEvent: (id) => dispatch(deleteEvent(id))
+    deleteEvent: (id) => dispatch(deleteEvent(id)),
+    fetchEvent: (id) => dispatch(fetchEvent(id))
   };
 };
 

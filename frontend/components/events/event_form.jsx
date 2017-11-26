@@ -1,4 +1,5 @@
 import React from 'react';
+import UploadButton from './upload_button';
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -6,18 +7,25 @@ class EventForm extends React.Component {
     if (props.event === undefined) {
       this.state = { title: "", description: "", location: "", start_datetime: "",
         end_datetime: "", img_url: "", category: "", event_type: "",
-        event_topic: ""
-      };
+        event_topic: "" };
     }else {
       this.state = props.event;
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.postImage = this.postImage.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+  }
 
+  componentWillMount() {
+    this.props.clearErrors();
+    if (this.props.eventId) {
+      this.props.fetchEvent(this.props.eventId);
+    }
   }
 
   update(prop) {
-    (e) => (
+    return (e) => (
       this.setState({[prop]: e.target.value})
     );
   }
@@ -28,14 +36,14 @@ class EventForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.props.history.push(`/events/${nextProps.event.id}`);
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.props.clearErrors();
+
+    }
   }
 
-  componentWillUnmount() {
-    this.props.clearErrors();
-    this.setState({ title: "", description: "", location: "",
-      start_datetime: "", end_datetime: "", img_url: "", category: "",
-      event_type: "", event_topic: ""});
+  postImage(img_url) {
+    this.setState({ img_url: img_url});
   }
 
   renderErrors() {
@@ -51,66 +59,75 @@ class EventForm extends React.Component {
   }
 
   render() {
+    const { title, description, location, start_datetime, end_datetime,
+       img_url, category, event_type, event_topic } = this.state;
     return (
       <div className="new-update-event">
         <div className="session-errors">
           {this.renderErrors()}
         </div>
 
+        <div className='form-header'>
+          <h3 className='form-title'>Create An Event</h3>
+          <button className='form-publish' onClick={this.handleSubmit}>Publish</button>
+        </div>
+
+        <div className='divider'>
+        </div>
+
         <form className='event-form' onSubmit={this.handleSubmit}>
-          <label>Event Title<br/>
+          <label className='evenForm-label'>EVENT TITLE<br/>
             <input
               className='event-form-input'
               type='text'
               placeholder='Give it a short distinct name'
               onChange={this.update('title')}
-              value={this.state.title}/><br/>
+              value={title}/><br/>
           </label>
 
-          <label>Location<br/>
+          <label className='evenForm-label'>LOCATION<br/>
             <input
               className='event-form-input'
               type='text'
               placeholder='Venue address'
               onChange={this.update('location')}
-              value={this.state.location}/><br/>
+              value={location}/><br/>
           </label>
 
-          <label>Starts
+          <label className='evenForm-label'>STARTS
             <input
               className='event-form-input-date'
               type='datetime-local'
               onChange={this.update('start_datetime')}
-              value={this.state.start_datetime}/>
+              value={start_datetime}/>
           </label>
 
-          <label>Ends
+          <label className='evenForm-label'>ENDS
             <input
               className='event-form-input-date'
               type='datetime-local'
               onChange={this.update('end_datetime')}
-              value={this.state.end_datetime}/>
+              value={end_datetime}/>
           </label>
 
-          <label>Image Url<br/>
-            <input
-              className='event-form-input'
-              type='text'
-              placeholder='Url for event image'
-              onChange={this.update('img_url')}
-              value={this.state.img_url}/><br/>
+          <label className='evenForm-label'>IMAGE<br/>
+            <UploadButton
+              postImage={this.postImage}
+              imgUrl={this.state.img_url} />
           </label>
 
-          <label>Event Description<br/>
+          <label className='evenForm-label'>EVENT DESCRIPTION<br/>
             <textarea
               className='event-form-input'
               type='text'
               onChange={this.update('description')}
-              value={this.state.description}/><br/>
+              value={description}/><br/>
           </label>
 
-          <label>Category<br/>
-            <select className='event-form-input' name='category'>
+          <label className='evenForm-label'>CATEGORY<br/>
+            <select onChange={this.update('category')}
+              className='event-form-input' value={category}>
+              <option disabled>Select a category</option>
               <option value='Music'>Music</option>
               <option value='Food&Drink'>Food&Drink</option>
               <option value='Classes'>Classes</option>
@@ -121,13 +138,14 @@ class EventForm extends React.Component {
             </select><br/>
           </label>
 
-          <h2>Listing Privacy</h2>
+          <h2 className='evenForm-label'>LISTING PRIVACY</h2>
           <div className='privacy-radio'>
             <label>
               <input
                 type='radio'
-                name='privacy'
                 className='event-form-input'
+                name='privacy'
+                onChange={this.update('privacy')}
                 value='public' /> <span>Public page</span>
             </label>
           </div>
@@ -135,15 +153,18 @@ class EventForm extends React.Component {
             <label>
               <input
                 type='radio'
-                name='privacy'
                 className='event-form-input'
+                name='privacy'
+                onChange={this.update('privacy')}
                 value='private' /> <span>Private page</span>
             </label><br/>
           </div>
 
 
-          <label>Event Type<br/>
-            <select className='event-form-input' name='event_type'>
+          <label className='evenForm-label'>EVENT TYPE<br/>
+            <select onChange={this.update('event_type')}
+              className='event-form-input' value={event_type}>
+              <option disabled>Select a type</option>
               <option value='Appearance or Signing'>Appearance or Signing</option>
               <option value='Attraction'>Attraction</option>
               <option value='Camp, Trip, or Retreat'>Camp, Trip, or Retreat</option>
@@ -167,8 +188,10 @@ class EventForm extends React.Component {
             </select><br/>
           </label>
 
-          <label>Event Topic<br/>
-            <select className='event-form-input' name='event_topic'>
+          <label className='evenForm-label'>EVENT TOPIC<br/>
+            <select onChange={this.update('event_topic')}
+              className='event-form-input' value={event_topic}>
+              <option disabled>Select a topic</option>
               <option value='Auto, Boat & Air'>Auto, Boat & Air</option>
               <option value='Business & Proessional'>Business & Proessional</option>
               <option value='Charity & Causes'>Charity & Causes</option>

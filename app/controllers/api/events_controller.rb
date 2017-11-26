@@ -8,14 +8,18 @@ class Api::EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
-    render json: @event
+    if @event
+      render json: @event
+    else
+      render json: ['Could not find event'], status: 404
+    end
   end
 
   def create
     @event = Event.new(event_params)
     @event.organizer_id = current_user.id
-
     if @event.save
+
       render json: @event
     else
       render json: @event.errors.full_messages, status: 404
@@ -49,9 +53,9 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require[:event].permit[:title, :description, :location,
+    params.require(:event).permit(:title, :description, :location,
       :start_datetime, :end_datetime, :img_url, :category, :privacy,
-      :event_type, :event_topic]
+      :event_type, :event_topic)
   end
 
 end

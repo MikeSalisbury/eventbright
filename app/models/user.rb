@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :organizers,
+  has_many :events,
   primary_key: :id,
   foreign_key: :organizer_id,
   class_name: :User
