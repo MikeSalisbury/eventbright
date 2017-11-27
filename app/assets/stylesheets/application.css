@@ -28,7 +28,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  background-color: lightgray;
+  background-color: #F5F5F5;
   width: 70%;
   padding: 10px;
 }
@@ -36,13 +36,14 @@
 .event-form-input {
   border: 1px solid black;
   margin-bottom: 10px;
-  width: 200%;
+  width: 300%;
   padding: 10px;
   background-color: white;
+  border-radius: 5px;
 }
 
 .event-submit {
-  background-color: #00ab44;
+  background-color: #00AB44;
   padding: 15px;
   color: white;
   border-radius: 5px;
@@ -50,13 +51,18 @@
   font-size: 16px;
 }
 
+.start-end-dates {
+  display: flex;
+}
+
 .event-form-input-date {
   display: flex;
   border: 1px solid black;
   margin-bottom: 10px;
-  width: 50%;
+  width: 81%;
   padding: 10px;
   background-color: white;
+  border-radius: 5px;
 }
 
 .image-upload-button {
@@ -72,7 +78,7 @@
   width: 100%;
   background-color: white;
   align-items: center;
-  /*border-top: 1px solid lightgray;*/
+  border-top: 1px solid #F5F5F5;
 }
 
 .form-publish {
@@ -111,4 +117,90 @@ color: #363A43;
 .event-index-item-image {
   width: 25%;
 
+}
+
+.form-errors {
+  border: 1px solid yellow;
+}
+
+.event-details-section-header {
+  display: flex;
+  width: 70%;
+}
+
+.event-details-num {
+  margin: 15px 0px;
+  background-color: #0093D7;
+  font-size: 36px;
+  color: white;
+  justify-content: center;
+  display: flex;
+  width: 44px;
+  padding: 5px
+}
+
+.event-details-title {
+  margin: 15px 0px;
+  font-size: 28px;
+  color: gray;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid gray;
+  width: 100%
+}
+
+.eventForm-label {
+  margin-bottom: 5px;
+}
+
+.privacy-radio {
+  display: flex;
+}
+
+.event-form-dropdown {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  width: 150%;
+  height: 45px;
+  padding: 10px;
+  background-color: white;
+  font-size: 20px;
+  font-weight: 200;
+  border: 1px solid #E8E8E8;
+}
+
+.img-url-confirm {
+  margin: 15px 0;
+}
+
+.form-errors {
+  font-weight: bold;
+  background-color: white;
+  padding: 10px;
+  color: black;
+}
+
+.form-error-item {
+  margin: 5px 0px ;
+}
+
+.search-bar-over-background-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 80%;
+  height: 200px;
+  background-color: white;
+  left: 10%;
+  top: 62%;
+  font-size: 40px;
+  font-weight: 100;
+  color: #F6682F;
+}
+
+.event-index-item {
+  /*border: 1px solid black;*/
 }

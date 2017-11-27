@@ -13,7 +13,6 @@ class UploadButton extends React.Component {
       window.cloudinary_options,
       (error, images) => {
         if (error === null) {
-          //upload successful
           this.props.postImage(images[0].url);
         }
       });
@@ -24,7 +23,8 @@ class UploadButton extends React.Component {
       <div>
         <button className='image-upload-button'
           onClick={this.upload}>Upload Image</button><br/>
-        url: {this.props.imgUrl}
+        <div className='img-url-confirm'>URL STATUS: {(this.props.imgUrl
+             === "")? "No Url" : "Url Saved"}</div>
       </div>
     );
   }

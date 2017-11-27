@@ -6,7 +6,7 @@
   flex: 0 0 auto;
   justify-content: space-between;
   height: 61px;
-  //border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #F5F5F5;
   background-color: white;
 }
 
@@ -22,7 +22,7 @@
   font-size: 20px;
   font-weight: bold;
   padding: 15px 0px 15px 20px;
-  border-right: 1px solid lightgray;
+  border-right: 1px solid #F5F5F5;
   height: 33px;
   width: 100%;
   color: #f6682f;
@@ -36,7 +36,7 @@
 .nav {
   display: flex;
   padding: 22px 23px;
-  border-left: 1px solid lightgray;
+  border-left: 1px solid #F5F5F5;
 
 }
 
@@ -52,7 +52,7 @@ h3.nav {
 }
 
 h3.nav:hover {
-  background-color: lightgray;
+  background-color: #F5F5F5;
 }
 
 h3.nav:hover:last-child {
@@ -126,7 +126,7 @@ h3.nav:hover:last-child {
 }
 
 .signin-login-input {
-  border: 1px solid lightgray;
+  border: 1px solid #F5F5F5;
   margin: 5px 0px 5px 0px;
   border-radius: 5px;
   padding: 12px;
@@ -193,7 +193,7 @@ h3.nav:hover:last-child {
 }
 
 .signin-login-name {
-  border: 1px solid lightgray;
+  border: 1px solid #F5F5F5;
   margin: 5px 0px 5px 0px;
   border-radius: 5px;
   padding: 12px;
