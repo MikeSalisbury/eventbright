@@ -31,7 +31,7 @@ class signinForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault;
-    this.props.demoLogin({email:"ben@gmail.com", password:"password"});
+    this.props.demoLogin({email:"ben@fakeemail.com", password:"password"});
     this.props.history.push('/');
   }
 
