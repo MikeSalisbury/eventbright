@@ -101,3 +101,14 @@ color: #363A43;
   height: 48px;
   background-color: #45494E;
 }
+
+.large-splash-image {
+  display: flex;
+  height: 400px;
+  width: 100%;
+}
+
+.event-index-item-image {
+  width: 25%;
+
+}

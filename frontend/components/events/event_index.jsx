@@ -15,7 +15,7 @@ class EventIndex extends React.Component {
     return(
       <div className='event-index-page'>
         <div className='large-splash-image'>
-          <img></img>
+          <img src='http://res.cloudinary.com/dckbujmht/image/upload/v1511715368/outdoors/redwoods_tour.jpg'></img>
         </div>
         <div className='search-bar-over-background-image'>
 

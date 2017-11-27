@@ -19,9 +19,7 @@ class EventForm extends React.Component {
 
   componentWillMount() {
     this.props.clearErrors();
-    if (this.props.eventId) {
-      this.props.fetchEvent(this.props.eventId);
-    }
+    this.props.fetchEvent(this.props.eventId);
   }
 
   update(prop) {
@@ -38,7 +36,12 @@ class EventForm extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.pathname !== this.props.location.pathname) {
       this.props.clearErrors();
-
+    }
+    if ((nextProps.errors === ["Could not find event"])
+    && (nextProps.location.pathname === '/events/new')) {
+      this.setState({ title: "", description: "", location: "",
+         start_datetime: "", end_datetime: "", img_url: "",
+         category: "", event_type: "", event_topic: "" });
     }
   }
 
