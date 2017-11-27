@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-  CATEGORIES = %w(Music Food&Drink Classes Arts Parties
-    Sports&Wellness Networking)
+  CATEGORIES = ['Music', 'Food & Drink', 'Classes', 'Arts', 'Parties',
+    'Sports & Wellness', 'Networking']
 
   validates :title, :description, :location, :start_datetime,
    :end_datetime, :img_url, :category, :privacy, presence: true

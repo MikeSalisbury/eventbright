@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20171125003204) do
     t.string "event_topic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["organizer_id"], name: "index_events_on_organizer_id", unique: true
+    t.index ["organizer_id"], name: "index_events_on_organizer_id"
   end
 
   create_table "users", force: :cascade do |t|

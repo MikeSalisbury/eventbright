@@ -129,11 +129,11 @@ class EventForm extends React.Component {
               className='event-form-input' value={category}>
               <option disabled>Select a category</option>
               <option value='Music'>Music</option>
-              <option value='Food&Drink'>Food&Drink</option>
+              <option value='Food & Drink'>Food & Drink</option>
               <option value='Classes'>Classes</option>
               <option value='Arts'>Arts</option>
               <option value='Parties'>Parties</option>
-              <option value='Sports&Wellness'>Sports&Wellnes</option>
+              <option value='Sports & Wellness'>Sports & Wellness</option>
               <option value='Networking'>Networking</option>
             </select><br/>
           </label>
