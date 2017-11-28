@@ -162,6 +162,8 @@ h3.nav:hover:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 24px;
+  width: 48%;
 }
 
 .demoLogin {
@@ -200,4 +202,8 @@ h3.nav:hover:last-child {
   margin-bottom: 10px;
   color: black;
   width: 80%
+}
+
+.signin-login-name:focus {
+  border: 1px solid #40E0D0;
 }

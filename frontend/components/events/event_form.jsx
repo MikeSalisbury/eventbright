@@ -128,7 +128,7 @@ class EventForm extends React.Component {
 
           <label><div className='eventForm-label'>EVENT DESCRIPTION</div>
             <textarea
-              className='event-form-input'
+              className='event-form-input-description'
               type='text'
               onChange={this.update('description')}
               value={description}/>
@@ -163,20 +163,24 @@ class EventForm extends React.Component {
             <label>
               <input
                 type='radio'
-                className='event-form-input'
+                className='event-form-input-privacy'
                 name='privacy'
                 onChange={this.update('privacy')}
-                value='public' /> <span>Public page</span>
+                value='public' /> <span className='privacy-option'>
+                Public page:</span> <span
+                className='privacy-description'>Discoverable by anyone
+                on Eventbrite, our distribution partners, and search
+                engines.</span>
             </label>
           </div>
           <div className='privacy-radio'>
             <label>
               <input
                 type='radio'
-                className='event-form-input'
+                className='event-form-input-privacy'
                 name='privacy'
                 onChange={this.update('privacy')}
-                value='private' /> <span>Private page</span>
+                value='private' /> <span className='privacy-option'>Private page:</span> <span className='privacy-description'>Accessible only by people you specify.</span>
             </label><br/>
           </div>
 

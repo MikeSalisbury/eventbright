@@ -85,7 +85,7 @@ e8 = Event.create({organizer_id: ben.id, title: 'Seminar: Basic Auto Maintenance
    This 7 hour seminar is meant to educate and teach the basics of maintaining your car (oil change, fluid change, filter change, etc,.).
    Bring questions as our expert technician will be available for a Q&A session immediately following the seminar.
    Tickets are $20.",
-   img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715440/pets/why_dogs_are_better_than_cats_seminar.jpg',
+   img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715272/car%20seeds/basic_car_maintenance.jpg',
    category: 'Classes', event_type: 'Seminar or Talk', event_topic: 'Auto, Boat & Air',
    location: '1800 Old Bayshore Hwy, Burlingame, CA 94010', start_datetime: '2018-03-04T11:00' ,
    end_datetime: '2018-03-04T18:00', privacy: 'Public'})
@@ -167,7 +167,7 @@ e16 = Event.create({organizer_id: christina.id, title: "Lantern Festival",
   Music, dancing, lanterns and S'mores will be provided!!
   Food and beverages will be available for purchase.
   Tickets are $80",
-  img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715368/outdoors/lantern_festival.jpg',
+  img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511818057/outdoors/lantern_festival.jpg',
   category: 'Networking', event_type: 'Festival or Fair', event_topic: 'Travel & Outdoor',
   location: '1965 S Hwy 95a, Fernley, NV 89408', start_datetime: '2018-09-24T18:00' ,
   end_datetime: '2018-09-24T22:00', privacy: 'Public'})
@@ -178,7 +178,7 @@ e17 = Event.create({organizer_id: christina.id, title: "Walk Among the Giants - 
   The guided hikes will happen Friday and Saturday.
   all attendees will be dropped off Sunday afternoon/evening at location of pickup.
   Tickets are $500",
-  img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715368/outdoors/redwoods_tour.jpg',
+  img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511818233/outdoors/redwoods_tour.jpg',
   category: 'Sports & Wellness', event_type: 'Camp, Trip, or Retreat', event_topic: 'Travel & Outdoor',
   location: '47050 Generals Highway Three Rivers, CA 93271', start_datetime: '2018-10-02T08:00' ,
   end_datetime: '2018-10-04T20:00', privacy: 'Public'})
@@ -207,7 +207,7 @@ e20 = Event.create({organizer_id: chris.id, title: "Coffee Meetup: Learn Your Co
   description: "Spend the day sampling 8 different type of coffee beverages.
   Learn from our craftsmen the differences between beans, methods and crafting.
   Tickets are $25.",
-  img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715320/food%20and%20drink%20seeds/coffee_tasting.jpg',
+  img_url: 'https://res.cloudinary.com/dckbujmht/image/upload/c_crop,y_1011/v1511818541/food%20and%20drink%20seeds/coffee_tasting.jpg',
   category: 'Food & Drink', event_type: 'Seminar or Talk', event_topic: 'Food & Drink',
   location: '66 Mint St San Francisco, CA 94103', start_datetime: '2018-11-24T12:00' ,
   end_datetime: '2018-11-24T16:00', privacy: 'Public'})
