@@ -36,7 +36,15 @@ class sessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault;
     this.props.action(this.state);
-    this.props.history.push('/');
+
+    if (!this.props.currentUser && this.props.formType === 'Sign Up' ) {
+      this.props.history.push('/signin/signup');
+    } else if (!this.props.currentUser && this.props.formType === 'Login') {
+      this.props.history.push('/signin/login');
+    } else {
+      this.props.clearErrors();
+      this.props.history.push('/');
+    }
   }
 
   handleHeader() {

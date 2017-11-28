@@ -43,6 +43,7 @@ class sessionModal extends React.Component {
         formType={this.props.formType}
         clearErrors={this.props.clearErrors}
         ui={this.props.ui}
+        currentUser={this.props.currentUser}
       />;
     } else if (this.props.formType === 'Login') {
       form = <SessionForm
@@ -53,6 +54,7 @@ class sessionModal extends React.Component {
         formType={this.props.formType}
         clearErrors={this.props.clearErrors}
         ui={this.props.ui}
+        currentUser={this.props.currentUser}
       />;
     } else {
       form = <SigninFormContainer
@@ -60,6 +62,7 @@ class sessionModal extends React.Component {
         errors={this.props.errors}
         clearErrors={this.props.clearErrors}
         demoLogin={this.props.demoLogin}
+        currentUser={this.props.currentUser}
       />;
     }
 

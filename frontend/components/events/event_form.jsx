@@ -53,15 +53,19 @@ class EventForm extends React.Component {
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li className='form-error-item'key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors.length > 0) {
+      return(
+        <div className="form-errors">
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li className='form-error-item'key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -76,10 +80,7 @@ class EventForm extends React.Component {
         </div>
 
         <div className='divider'></div>
-
-        <div className="form-errors">
-          {this.renderErrors()}
-        </div>
+            {this.renderErrors()}
         <div className='event-details-section-header'>
           <div className='event-details-num'>1</div>
           <div className='event-details-title'>Event Details</div>
