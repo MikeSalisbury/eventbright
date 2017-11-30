@@ -25,6 +25,12 @@ export const fetchEvents = () => dispatch => (
     err => dispatch(receiveEventErrors(err.responseJSON)))
 );
 
+export const fetchFilteredEvents = (category) => dispatch => (
+  APIUtil.fetchFilteredEvents(category)
+  .then( events => dispatch(receiveEvents(events)),
+  err => dispatch(receiveEventErrors(err.response.JSON)))
+);
+
 export const fetchEvent = (id) => dispatch => (
   APIUtil.fetchEvent(id)
     .then( event => dispatch(receiveEvent(event)),

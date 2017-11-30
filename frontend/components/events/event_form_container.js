@@ -6,15 +6,20 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   let event;
+  let ticket = {};
   const errors = state.errors.event;
   const eventId = ownProps.match.params.eventId;
-  
+
   if (ownProps.match.path === '/events/:eventId/edit') {
-    event = state.entities.events[ownProps.match.params.eventId];
+    event = state.entities.events[eventId];
+    if (event.ticket) {
+      ticket = state.entities.events[eventId].ticket;
+    }
   }
 
   return {
     event,
+    ticket,
     eventId,
     errors
   };

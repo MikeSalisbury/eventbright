@@ -21,6 +21,7 @@ e1 = Event.create({organizer_id: mike.id, title: 'Squaw Valley: Ski & Snowboard 
    category: 'Sports & Wellness', event_type: 'Camp, Trip, or Retreat', event_topic: 'Sports & Fitness',
    location: '1960 Squaw Valley Rd, Olympic Valley, CA 96146', start_datetime: '2017-12-01T10:00' ,
    end_datetime: '2018-01-13T22:00', privacy: 'Public'})
+   t1 = Ticket.create({event_id: e1.id, name: 'General Ticket', quantity: 100, price: 129})
 
 e2 = Event.create({organizer_id: mike.id, title: 'NBA G League: Santa Cruz Warriors Season Opener!',
    description: 'Come join us at Kaiser Permanente Arena to root for your Santa Cruz Warriors when they open their season against the South Bay Lakers.
@@ -31,6 +32,7 @@ e2 = Event.create({organizer_id: mike.id, title: 'NBA G League: Santa Cruz Warri
    category: 'Sports & Wellness', event_type: 'Game or Competition', event_topic: 'Sports & Fitness',
    location: '140 Front Street, Santa Cruz, CA 95060', start_datetime: '2018-11-04T18:00' ,
    end_datetime: '2018-11-04T22:00', privacy: 'Public'})
+   t2 = Ticket.create({event_id: e2.id, name: 'General Ticket', quantity: 100, price: 50})
 
 e3 = Event.create({organizer_id: mike.id, title: 'Football Rivalry Week: Stanford Cardinals vs USC Trojans',
    description: 'Root for your favorite team as we kick off rivalry week!
@@ -42,6 +44,8 @@ e3 = Event.create({organizer_id: mike.id, title: 'Football Rivalry Week: Stanfor
    category: 'Sports & Wellness', event_type: 'Game or Competition', event_topic: 'Sports & Fitness',
    location: '625 Nelson Rd, Stanford, CA 94305', start_datetime: '2017-12-01T17:00' ,
    end_datetime: '2017-12-01T21:00', privacy: 'Public'})
+   t3 = Ticket.create({event_id: e3.id, name: 'General Ticket', quantity: 100, price: 130})
+
 
 e4 = Event.create({organizer_id: mike.id, title: 'Champions League - Group Stage: Borussia Dortmund (BVB) vs Real Madrid C.F.',
    description: 'Group H Matchday 6, 2nd in group Real Madrid takes on 3rd in group Dortmund.
@@ -52,6 +56,8 @@ e4 = Event.create({organizer_id: mike.id, title: 'Champions League - Group Stage
    category: 'Sports & Wellness', event_type: 'Game or Competition', event_topic: 'Sports & Fitness',
    location: 'Av. de Concha Espina, 1, 28036 Madrid, Spain', start_datetime: '2017-12-06T11:45' ,
    end_datetime: '2017-12-06T14:00', privacy: 'Public'})
+   t4 = Ticket.create({event_id: e4.id, name: 'General Ticket', quantity: 100, price: 150})
+
 
 e5 = Event.create({organizer_id: mike.id, title: 'Trail Biking - Highway 17',
    description: "Technical singletrack through the redwoods, come join me off highway 17.
@@ -60,6 +66,8 @@ e5 = Event.create({organizer_id: mike.id, title: 'Trail Biking - Highway 17',
    category: 'Sports & Wellness', event_type: 'Other', event_topic: 'Sports & Fitness',
    location: 'Aptos Creek Rd, Aptos, CA 95003', start_datetime: '2018-02-18T08:00' ,
    end_datetime: '2018-02-18T13:00', privacy: 'Public'})
+   t5 = Ticket.create({event_id: e5.id, name: 'General Ticket', quantity: 100, price: 0})
+
 
 e6 = Event.create({organizer_id: ben.id, title: 'Golden Gate Park: Bark in the Park',
    description: "Social gathering for both humans and pups at the SF Botanical Garden in GGP, bring your favorite furry friends and have a drink!
@@ -69,6 +77,8 @@ e6 = Event.create({organizer_id: ben.id, title: 'Golden Gate Park: Bark in the P
    category: 'Networking', event_type: 'Party or Social Gathering', event_topic: 'Other',
    location: '9th Ave and Lincoln Way San Francisco, CA 94118', start_datetime: '2018-01-14T10:00' ,
    end_datetime: '2018-01-14T18:00', privacy: 'Public'})
+   t6 = Ticket.create({event_id: e6.id, name: 'General Ticket', quantity: 100, price: 0})
+
 
 e7 = Event.create({organizer_id: ben.id, title: 'Seminar: Why Dogs are Better than Cats',
    description: "Please join us at the San Francisco Airport Marriott for a delightful talk on the many pluses of owning a dog.
@@ -79,6 +89,8 @@ e7 = Event.create({organizer_id: ben.id, title: 'Seminar: Why Dogs are Better th
    category: 'Classes', event_type: 'Seminar or Talk', event_topic: 'Family & Education',
    location: '1800 Old Bayshore Hwy, Burlingame, CA 94010', start_datetime: '2018-01-20T11:00' ,
    end_datetime: '2018-01-20T16:00', privacy: 'Public'})
+   t7 = Ticket.create({event_id: e7.id, name: 'General Ticket', quantity: 100, price: 15})
+
 
 e8 = Event.create({organizer_id: ben.id, title: 'Seminar: Basic Auto Maintenance',
    description: "Please join us at the San Francisco Airport Marriott for a delightful talk on the basics of auto maintenance.
@@ -89,6 +101,8 @@ e8 = Event.create({organizer_id: ben.id, title: 'Seminar: Basic Auto Maintenance
    category: 'Classes', event_type: 'Seminar or Talk', event_topic: 'Auto, Boat & Air',
    location: '1800 Old Bayshore Hwy, Burlingame, CA 94010', start_datetime: '2018-03-04T11:00' ,
    end_datetime: '2018-03-04T18:00', privacy: 'Public'})
+   t8 = Ticket.create({event_id: e8.id, name: 'General Ticket', quantity: 100, price: 20})
+
 
 e9 = Event.create({organizer_id: ben.id, title: 'Sacramento Raceway Park: Summer Shootout Series - Drag Racing',
    description: "Summer shootout series returns to Sacramento Raceway!!
@@ -99,6 +113,8 @@ e9 = Event.create({organizer_id: ben.id, title: 'Sacramento Raceway Park: Summer
    category: 'Sports & Wellness', event_type: 'Game or Competition', event_topic: 'Auto, Boat & Air',
    location: '5305 Excelsior Rd, Sacramento, CA 95827', start_datetime: '2018-06-10T13:00' ,
    end_datetime: '2018-06-10T20:00', privacy: 'Public'})
+   t9 = Ticket.create({event_id: e9.id, name: 'General Ticket', quantity: 100, price: 35})
+
 
 e10 = Event.create({organizer_id: ben.id, title: 'Mazda Raceway Laguna Seca: Superbike Racing',
    description: "Join us at the classic and beautiful Laguna Seca Raceway!
@@ -110,26 +126,32 @@ e10 = Event.create({organizer_id: ben.id, title: 'Mazda Raceway Laguna Seca: Sup
    location: '1021 Monterey Salinas Hwy, Salinas, CA 93908', start_datetime: '2018-06-22T13:00' ,
    end_datetime: '2018-06-22T20:00', privacy: 'Public'})
    # http://www.mazdaraceway.com/fim-superbike-world-championship
+   t10 = Ticket.create({event_id: e10.id, name: 'General Ticket', quantity: 100, price: 85})
 
-e11 = Event.create({organizer_id: ben.id, title: "The Legend of Zelda: Symphony of the Goddess",
+
+e11 = Event.create({organizer_id: ben.id, title: "Hot Tahoe Crusin' South Shore Car Show",
    description: "Car show at the Heavenly Village in South Lake Tahoe.
    The event is open to all cars, trucks, and bikes.
    There will be food, drinks, live music and games!
    Tickets are $35.",
    img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715270/car%20seeds/muscle_car_show.jpg',
-   category: 'Art', event_type: 'Festival or Fair', event_topic: 'Auto, Boat & Air',
+   category: 'Arts', event_type: 'Festival or Fair', event_topic: 'Auto, Boat & Air',
    location: '1001 Heavenly Village Way South Lake Tahoe, CA 96150', start_datetime: '2018-08-08T11:00' ,
    end_datetime: '2018-08-13T21:00', privacy: 'Public'})
+   t11 = Ticket.create({event_id: e11.id, name: 'General Ticket', quantity: 100, price: 35})
 
-e12 = Event.create({organizer_id: mike.id, title: "Hot Tahoe Crusin' South Shore Car Show",
+
+e12 = Event.create({organizer_id: mike.id, title: "The Legend of Zelda: Symphony of the Goddess",
    description: "Join us at the City National Civic in San Jose for the transcendent Zelda symphony series.
    Relive all of your favorite moments from beloved melodies from Ocarina of Time, The Wind Waker, Twilight Princess, A Link to the Past, Link's Awakening and more.
    Tickets are $90.",
-   img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715146/music%20seeds/classical_symphony.jpg',
-   category: 'Music', event_type: 'Concert or Performance', event_topic: 'Music',
+   img_url: ' http://res.cloudinary.com/dckbujmht/image/upload/v1511715146/music%20seeds/classical_symphony.jpg',
+   category: 'Arts', event_type: 'Concert or Performance', event_topic: 'Music',
    location: '135 W San Carlos St, San Jose, CA 95113', start_datetime: '2017-12-09T20:00',
    end_datetime: '2017-12-09T22:30', privacy: 'Public'})
    # https://zelda-symphony.com
+   t12 = Ticket.create({event_id: e12.id, name: 'General Ticket', quantity: 100, price: 90})
+
 
 e13 = Event.create({organizer_id: mike.id, title: "Love + Propaganda Saturdays w/ Kungs",
    description: "Come see world famous DJ - Kungs, and party as he spins all night!
@@ -139,6 +161,8 @@ e13 = Event.create({organizer_id: mike.id, title: "Love + Propaganda Saturdays w
    category: 'Music', event_type: 'Concert or Performance', event_topic: 'Music',
    location: '85 Campton Pl, San Francisco, CA 94108', start_datetime: '2017-12-09T22:00' ,
    end_datetime: '2017-12-10T01:00', privacy: 'Public'})
+   t13 = Ticket.create({event_id: e13.id, name: 'General Ticket', quantity: 100, price: 30})
+
 
 e14 = Event.create({organizer_id: mike.id, title: "Coachella 2018",
   description: "The Coachella Valley Music and Arts Festival is an annual music and arts festival held at the Empire Polo Club in Indio, California, located in the Inland Empire's Coachella Valley, in the Colorado Desert.
@@ -149,6 +173,8 @@ e14 = Event.create({organizer_id: mike.id, title: "Coachella 2018",
   location: '81-800 51st Ave, Indio, CA 92201', start_datetime: '2017-04-13T10:00' ,
   end_datetime: '2017-04-15T22:00', privacy: 'Public'})
   # http://splash.coachella.com/
+  t14 = Ticket.create({event_id: e14.id, name: 'General Ticket', quantity: 100, price: 400})
+
 
 e15 = Event.create({organizer_id: christina.id, title: "Weekend Half Dome Hike",
   description: "This event consists of pickup in San Francisco, drive to Yosemite Friday afternoon.
@@ -160,6 +186,8 @@ e15 = Event.create({organizer_id: christina.id, title: "Weekend Half Dome Hike",
   category: 'Sports & Wellness', event_type: 'Camp, Trip, or Retreat', event_topic: 'Travel & Outdoor',
   location: 'Yosemite National Park, CA 95389', start_datetime: '2018-01-12T10:00' ,
   end_datetime: '2018-01-14T20:00', privacy: 'Public'})
+  t15 = Ticket.create({event_id: e15.id, name: 'General Ticket', quantity: 100, price: 500})
+
 
 e16 = Event.create({organizer_id: christina.id, title: "Lantern Festival",
   description: "Join us for this amazing spectacle as thousands light up the night with lanterns.
@@ -168,9 +196,11 @@ e16 = Event.create({organizer_id: christina.id, title: "Lantern Festival",
   Food and beverages will be available for purchase.
   Tickets are $80",
   img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511818057/outdoors/lantern_festival.jpg',
-  category: 'Networking', event_type: 'Festival or Fair', event_topic: 'Travel & Outdoor',
+  category: 'Parties', event_type: 'Festival or Fair', event_topic: 'Travel & Outdoor',
   location: '1965 S Hwy 95a, Fernley, NV 89408', start_datetime: '2018-09-24T18:00' ,
   end_datetime: '2018-09-24T22:00', privacy: 'Public'})
+  t16 = Ticket.create({event_id: e16.id, name: 'General Ticket', quantity: 100, price: 80})
+
 
 e17 = Event.create({organizer_id: christina.id, title: "Walk Among the Giants - Sequoia National Park",
   description: "This event consists of pickup in San Francisco, drive to Sequoia Friday morning.
@@ -182,6 +212,8 @@ e17 = Event.create({organizer_id: christina.id, title: "Walk Among the Giants - 
   category: 'Sports & Wellness', event_type: 'Camp, Trip, or Retreat', event_topic: 'Travel & Outdoor',
   location: '47050 Generals Highway Three Rivers, CA 93271', start_datetime: '2018-10-02T08:00' ,
   end_datetime: '2018-10-04T20:00', privacy: 'Public'})
+  t17 = Ticket.create({event_id: e17.id, name: 'General Ticket', quantity: 100, price: 500})
+
 
 e18 = Event.create({organizer_id: christina.id, title: "Sushi with Jiro!",
   description: "Join us for an evening of the worlds best sushi from Michelin rated famed sushi chef Jiro Ono.
@@ -193,15 +225,19 @@ e18 = Event.create({organizer_id: christina.id, title: "Sushi with Jiro!",
   category: 'Food & Drink', event_type: 'Dinner or Gala', event_topic: 'Food & Drink',
   location: '945 Valencia St, San Francisco, CA 94110', start_datetime: '2018-02-14T19:00' ,
   end_datetime: '2018-02-14T22:00', privacy: 'Public'})
+  t18 = Ticket.create({event_id: e8.id, name: 'General Ticket', quantity: 100, price: 600})
+
 
 e19 = Event.create({organizer_id: chris.id, title: "San Francisco Beer Walk",
   description: "A fun day of sampling some of San Francisco's best craft breweries.
   Enjoy many flights from 10 different breweries including Anchor, Barebottle, Cellarmaker and Barrel Head.
   Tickets are $75, must be 21 years of age.",
   img_url: 'http://res.cloudinary.com/dckbujmht/image/upload/v1511715323/food%20and%20drink%20seeds/beer_walk.jpg',
-  category: 'Food & Drink', event_type: 'Party or Social Gathering', event_topic: 'Food & Drink',
+  category: 'Parties', event_type: 'Party or Social Gathering', event_topic: 'Food & Drink',
   location: '825 Battery St, San Francisco, CA 94111', start_datetime: '2018-06-20T12:00' ,
   end_datetime: '2018-06-20T16:00', privacy: 'Public'})
+  t19 = Ticket.create({event_id: e19.id, name: 'General Ticket', quantity: 100, price: 75})
+
 
 e20 = Event.create({organizer_id: chris.id, title: "Coffee Meetup: Learn Your Coffees",
   description: "Spend the day sampling 8 different type of coffee beverages.
@@ -211,6 +247,8 @@ e20 = Event.create({organizer_id: chris.id, title: "Coffee Meetup: Learn Your Co
   category: 'Food & Drink', event_type: 'Seminar or Talk', event_topic: 'Food & Drink',
   location: '66 Mint St San Francisco, CA 94103', start_datetime: '2018-11-24T12:00' ,
   end_datetime: '2018-11-24T16:00', privacy: 'Public'})
+  t20 = Ticket.create({event_id: e20.id, name: 'General Ticket', quantity: 100, price: 25})
+
 
 e21 = Event.create({organizer_id: chris.id, title: "Whiskies of the World",
   description: "Spend the day sampling 12 different type of whiskies from all over the globe!!
@@ -221,6 +259,8 @@ e21 = Event.create({organizer_id: chris.id, title: "Whiskies of the World",
   category: 'Food & Drink', event_type: 'Seminar or Talk', event_topic: 'Food & Drink',
   location: '1800 Old Bayshore Hwy, Burlingame, CA 94010', start_datetime: '2018-12-09T15:00' ,
   end_datetime: '2018-12-09T20:00', privacy: 'Public'})
+  t21 = Ticket.create({event_id: e21.id, name: 'General Ticket', quantity: 100, price: 85})
+
 
 e22 = Event.create({organizer_id: chris.id, title: "Sonoma Wine Tour",
   description: "Spend the day sampling wonderful wines from 4 different wineries in the region.
@@ -232,3 +272,4 @@ e22 = Event.create({organizer_id: chris.id, title: "Sonoma Wine Tour",
   category: 'Food & Drink', event_type: 'Party or Social Gathering', event_topic: 'Food & Drink',
   location: '867 W Napa St, Sonoma, CA 95476', start_datetime: '2018-07-22T10:00' ,
   end_datetime: '2018-07-22T18:00', privacy: 'Public'})
+  t22 = Ticket.create({event_id: e22.id, name: 'General Ticket', quantity: 100, price: 40})

@@ -1,7 +1,15 @@
 export const fetchEvents = () => (
   $.ajax({
     method: 'GET',
-    url: '/api/events'
+    url: '/api/events',
+  })
+);
+
+export const fetchFilteredEvents = (category) => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/filteredindex/',
+    data: {category}
   })
 );
 

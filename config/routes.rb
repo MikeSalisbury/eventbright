@@ -9,9 +9,13 @@ root to: 'static_pages#root'
     end
     resource :session, only: [:create, :destroy]
     resources :events, only: [:index, :show, :create, :update, :destroy]
+    resources :registrations, only: [:index, :create, :destroy]
   end
 
 get '/api/email/', to: 'api/users#email', as: 'emailCheck',
  defaults: {format: :json}
+
+post '/api/filteredindex/', to: 'api/events#filteredindex',
+ as: 'filterIndex', defaults: {format: :json}
 
 end

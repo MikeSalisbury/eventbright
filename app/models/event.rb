@@ -15,5 +15,10 @@ class Event < ApplicationRecord
   foreign_key: :organizer_id,
   class_name: :User
 
+  has_many :tickets,
+  primary_key: :id,
+  foreign_key: :event_id,
+  class_name: :Ticket
+
 
 end

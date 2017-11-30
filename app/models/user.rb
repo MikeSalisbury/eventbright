@@ -13,6 +13,13 @@ class User < ApplicationRecord
   foreign_key: :organizer_id,
   class_name: :Event
 
+  has_many :registrations,
+  primary_key: :id,
+  foreign_key: :owner_id,
+  class_name: :Registration
+
+  has_many :tickets, through: :registrations
+
   def User.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user && user.is_password?(password)

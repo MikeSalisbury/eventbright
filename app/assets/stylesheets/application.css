@@ -139,9 +139,14 @@ color: #363A43;
   border: 1px solid yellow;
 }
 
-.event-details-section-header {
+.event-details-section-header-details {
   display: flex;
   width: 70%;
+}
+
+.event-details-section-header {
+  display: flex;
+  width: 100%;
 }
 
 .event-details-num {
@@ -334,7 +339,7 @@ color: #363A43;
   align-items: center;
   border: 1px solid #E8E8E8;
   top: 110px;
-  left: 103.6px;
+  left: 115px;
   position: absolute;
   background-color: white;
   border-radius: 5px;
@@ -483,4 +488,276 @@ color: #363A43;
   color: #666A73;
   margin-bottom: 20px;
 
+}
+
+.event-form-ticket-creation {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 100%;
+  height: 100px;
+  color: #66A73;
+  display: flex;
+  justify-content: center;
+
+}
+
+.ticket-label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-form-ticket-header {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: .5px
+}
+
+.event-form-ticket-name {
+  width: 70%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.event-form-ticket-quantity {
+  width: 35%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.event-form-ticket-price {
+  width: 35%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.ticket-delete-button {
+  background-color: #F6682F;
+  padding: 5px 10px;
+  color: white;
+  font-size: 20px;
+  margin: 15px;
+}
+
+.event-index-filters {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.music-index-filter {
+  background-color: #F6682F;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.food-and-drink-index-filter {
+  background-color: #F6682F;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+
+}
+
+.classes-index-filter {
+  background-color: #F6682F;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+
+}
+
+.arts-index-filter {
+  background-color: #F6682F;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+
+}
+
+.parties-index-filter {
+  background-color: #F6682F;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+
+}
+
+.sports-and-wellness-index-filter {
+  background-color: #F6682F;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+
+}
+
+.networking-index-filter {
+  background-color: #F6682F;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+
+}
+
+/*registration modal*/
+
+.show-page-registration-modal {
+  /*width: 100%;
+  display: flex;
+  flex-direction: column;*/
+}
+
+.registration-modal {
+
+}
+
+.registration_after_open {
+  position: absolute;
+  max-width: 1080px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80%;
+  max-height: 570px;
+  top: 125px;
+  left: 22.5%;
+  z-index: 3;
+  border-radius: 5px;
+}
+
+.ReactModal__Body--open {
+  /*overflow: hidden;*/
+}
+
+.registration-modal-header {
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+}
+
+.registration-modal-header-text {
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #282C35;
+  background-color: #EFF2F5;
+
+}
+
+.registration-modal-body {
+  width: 100%;
+  height: 286.19px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #F5F5F5;
+  box-sizing: border-box;
+}
+
+.registration-modal-ticket-description {
+  width: 50%;
+  height: 25px;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  color: #45494E;
+}
+
+.registration-ticket-box {
+  width: 100%;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.registration-modal-footer {
+  width: 100%;
+  /*height: 20%;*/
+  border: 1px solid lightgray;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 5px 5px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.registration-num-tickets {
+  border: 1px solid lightgray;
+  padding: 5px;
+  background-color: white;
+}
+
+.registration-close-modal {
+  background-color: #EFF2F5;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  font-size: 20px;
+  padding: 5px;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  z-index: 1;
+}
+
+.registration-ticket-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-checkout-button {
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  background-color: #00ab44;
+  text-transform: uppercase;
+}
+
+.registration-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
 }

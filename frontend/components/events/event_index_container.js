@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchEvents } from '../../actions/event_actions';
+import { fetchFilteredEvents, fetchEvents } from '../../actions/event_actions';
 import EventIndex from './event_index';
 
 const mapStateToProps = state => ({
@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-fetchEvents: () => dispatch(fetchEvents())
+fetchEvents: () => dispatch(fetchEvents()),
+fetchFilteredEvents: (category) => dispatch(fetchFilteredEvents(category))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventIndex);

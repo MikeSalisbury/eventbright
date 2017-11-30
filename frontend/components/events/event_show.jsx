@@ -1,12 +1,18 @@
 import React from 'react';
-
+import Modal from 'react-modal';
+import RegistrationModal from '../registrations/registration_modal';
 
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { isOpen: false };
+    this.openModal = this.openModal.bind(this);
+    this.afterOpen = this.afterOpen.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillMount() {
+    window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.eventId);
   }
 
@@ -16,11 +22,11 @@ class EventShow extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   if (!this.props.event) {
-  //     this.props.fetchEvent(this.props.eventId);
-  //   }
-  // }
+  componentDidMount() {
+    if (!this.props.event) {
+      this.props.fetchEvent(this.props.eventId);
+    }
+  }
 
   renderErrors() {
     return(
@@ -34,8 +40,22 @@ class EventShow extends React.Component {
     );
   }
 
+  openModal() {
+    this.setState({isOpen: true});
+  }
+
+  afterOpen() {
+    //this.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.props.history.push(`/events/${this.props.eventId}`);
+    this.setState({isOpen: false});
+  }
+
   render() {
     if (this.props.event !== undefined) {
+
       const { title, description, location, start_datetime, end_datetime,
          img_url} = this.props.event;
 
@@ -69,6 +89,34 @@ class EventShow extends React.Component {
 
       return (
         <div>
+          <Modal
+            className={{
+              base: 'registration',
+              afterOpen: 'registration_after_open',
+              beforeClose: 'registration_before-close'
+            }}
+            overlayClassName={{
+              base: 'registrationOverlay',
+              afterOpen: 'registrationOverlay_after-open',
+              beforeClose: 'registrationOverlay_before-close'
+            }}
+            isOpen={this.state.isOpen}
+            onRequestClose={this.closeModal}
+            afterOpen={this.afterOpen}
+            contentLabel="Registration">
+            <div className='show-page-registration-modal'>
+              <div onClick={this.closeModal}>
+                <span className="registration-close-modal">&times;</span>
+              </div>
+              <RegistrationModal
+                ticket={this.props.ticket}
+                endMon={endMon}
+                endDate={endDate}
+                endYear={endYear}
+                createRegistration={this.props.createRegistration}
+                history={this.props.history}/>
+            </div>
+          </Modal>
           {
             <div className='event-show-page'>
               <div className='event-show-background-image-container'>
@@ -87,7 +135,7 @@ class EventShow extends React.Component {
 
                   <div className='show-divider'>
                       <span className='show-page-bm'>BM</span>
-                      <button className='show-page-tickets-button'>TICKETS</button>
+                      <button className='show-page-tickets-button' onClick={this.openModal}>REGISTER</button>
                   </div>
 
                   <div className='event-details'>

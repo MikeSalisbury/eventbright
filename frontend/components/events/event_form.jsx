@@ -1,5 +1,6 @@
 import React from 'react';
 import UploadButton from './upload_button';
+import merge from 'lodash/merge';
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -7,19 +8,21 @@ class EventForm extends React.Component {
     if (props.event === undefined) {
       this.state = { title: "", description: "", location: "", start_datetime: "",
         end_datetime: "", img_url: "", category: "", event_type: "",
-        event_topic: "" };
+        event_topic: "", ticket: {name: "", quantity: "", price: ""} };
     }else {
       this.state = props.event;
+      this.state.ticket = props.ticket;
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postImage = this.postImage.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.updateTicket = this.updateTicket.bind(this);
   }
 
   componentWillMount() {
     this.props.clearErrors();
-    if (this.props.pathname !== '/events/new') {
+    if (this.props.location.pathname !== '/events/new') {
       this.props.fetchEvent(this.props.eventId);
     }
   }
@@ -44,7 +47,7 @@ class EventForm extends React.Component {
       this.props.clearErrors();
       this.setState({ title: "", description: "", location: "",
          start_datetime: "", end_datetime: "", img_url: "",
-         category: "", event_type: "", event_topic: "" });
+         category: "", event_type: "", event_topic: "", ticket: {name: "", quantity: "", price: ""} });
     }
   }
 
@@ -68,9 +71,31 @@ class EventForm extends React.Component {
     }
   }
 
+  updateTicket(ticketProp) {
+    return (e) => {
+      let newState;
+      if (ticketProp === 'name') {
+        newState = merge(this.state.ticket, {name: e.target.value});
+        this.setState(newState);
+      } else if (ticketProp === 'quantity') {
+        newState = merge(this.state.ticket, {quantity: e.target.value});
+        this.setState(newState);
+
+      } else if (ticketProp === 'price') {
+        newState = merge(this.state.ticket, {price: e.target.value});
+        this.setState(newState);
+
+      }
+    };
+  }
+
+  handleDeleteTicket() {
+
+  }
+
   render() {
     const { title, description, location, start_datetime, end_datetime,
-       img_url, category, event_type, event_topic } = this.state;
+       img_url, category, event_type, event_topic, ticket } = this.state;
     return (
       <div className="new-update-event">
 
@@ -81,7 +106,7 @@ class EventForm extends React.Component {
 
         <div className='divider'></div>
             {this.renderErrors()}
-        <div className='event-details-section-header'>
+        <div className='event-details-section-header-details'>
           <div className='event-details-num'>1</div>
           <div className='event-details-title'>Event Details</div>
         </div>
@@ -138,6 +163,39 @@ class EventForm extends React.Component {
           <div className='event-details-section-header'>
             <div className='event-details-num'>2</div>
             <div className='event-details-title'>Create Tickets</div>
+          </div>
+
+          <div className='event-form-ticket-creation'>
+            <label className='ticket-label'><div className='event-form-ticket-header'>Ticket name</div>
+              <input
+                type='text'
+                className='event-form-ticket-name'
+                onChange={this.updateTicket('name')}
+                value={ticket.name}
+                placeholder='Early Bird, RSVP...'
+              />
+            </label>
+            <label className='ticket-label'><div className='event-form-ticket-header'>Quantity available</div>
+              <input
+                type='number'
+                min='1'
+                className='event-form-ticket-quantity'
+                onChange={this.updateTicket('quantity')}
+                value={ticket.quantity}
+                placeholder='100'
+              />
+            </label>
+            <label className='ticket-label'><div className='event-form-ticket-header'>Price</div>
+              <input
+                type='number'
+                min='0'
+                className='event-form-ticket-price'
+                onChange={this.updateTicket('price')}
+                value={ticket.price}
+                placeholder='15'
+              />
+            </label>
+            <button className='ticket-delete-button' onClick={this.handleDeleteTicket}>Delete</button>
           </div>
 
           <div className='event-details-section-header'>
