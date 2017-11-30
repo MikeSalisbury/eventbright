@@ -20,5 +20,11 @@ class Event < ApplicationRecord
   foreign_key: :event_id,
   class_name: :Ticket
 
+  has_many :bookmarks
+
+  has_many :user_bookmarks,
+  through: :bookmarks,
+  source: :user
+
 
 end

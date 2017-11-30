@@ -20,6 +20,12 @@ class User < ApplicationRecord
 
   has_many :tickets, through: :registrations
 
+  has_many :bookmarks
+  
+  has_many :bookmarked_events,
+  through: :bookmarks,
+  source: :events
+
   def User.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user && user.is_password?(password)
