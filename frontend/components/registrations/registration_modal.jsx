@@ -17,12 +17,10 @@ class RegistrationModal extends React.Component {
   }
 
   componentWillMount() {
-    console.log('mounted?');
     window.scrollTo(0, 0);
   }
 
   componentDidMount() {
-    console.log('mounted?');
     window.scrollTo(0, 0);
   }
 

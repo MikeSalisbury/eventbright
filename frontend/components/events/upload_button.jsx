@@ -8,7 +8,6 @@ class UploadButton extends React.Component {
 
   upload(e) {
     e.preventDefault();
-    console.log(this.props);
     cloudinary.openUploadWidget(
       window.cloudinary_options,
       (error, images) => {
