@@ -48,6 +48,11 @@ class EventShow extends React.Component {
      Object.values(nextProps.bookmarks).length) {
       nextProps.fetchBookmarks();
     }
+    if (Object.values(this.props.registrations).length !== Object.values(nextProps.registrations).length) {
+      nextProps.fetchRegistrations();
+      this.setState({isOpen: false});
+      nextProps.fetchEvent(nextProps.eventId);
+    }
 
   }
 
@@ -66,7 +71,7 @@ class EventShow extends React.Component {
           <i className="fa fa-calendar" aria-hidden="true"
             />
           <h3 className='show-registration-ticket-count'>
-            Tickets: {this.props.registrations[this.props.eventId]
+            My tickets: {this.props.registrations[this.props.eventId]
               .num_tickets}
             </h3>
         </div>
@@ -162,6 +167,7 @@ class EventShow extends React.Component {
               </div>
               <RegistrationModal
                 ticket={this.props.ticket}
+                eventId={this.props.event.id}
                 endMon={endMon}
                 endDate={endDate}
                 endYear={endYear}

@@ -16,19 +16,3 @@
  */
 
 /*event form*/
-.show-page-bm-registration {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-}
-
-.show-registration-icon {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  align-items: baseline;
-}
-
-.show-registration-ticket-count {
-  font-size: 24px;
-}

@@ -197,7 +197,7 @@ class EventForm extends React.Component {
                 placeholder='15'
               />
             </label>
-            <button className='ticket-delete-button' onClick={this.handleDeleteTicket}>Delete</button>
+
           </div>
 
           <div className='event-details-section-header'>
@@ -311,4 +311,8 @@ class EventForm extends React.Component {
   }
 }
 
+
 export default EventForm;
+
+// for future ticket iteration
+//<button className='ticket-delete-button' onClick={this.handleDeleteTicket}>Delete</button>

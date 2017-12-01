@@ -28,7 +28,6 @@ class RegistrationModal extends React.Component {
     e.preventDefault();
     this.props.createRegistration({num_tickets: this.state.num_tickets,
        ticket_id: this.state.id});
-    this.props.history.push(`/`);
   }
 
   render() {
@@ -53,7 +52,7 @@ class RegistrationModal extends React.Component {
                   {name}
                 </div>
                 <div>
-                  ${price}
+                  USD ${price}
                 </div>
               </div>
               <div className='registration-num-tickets-container'>
@@ -76,7 +75,7 @@ class RegistrationModal extends React.Component {
               QTY: {this.state.num_tickets}
             </div>
             <div>
-              ${price * this.state.num_tickets}
+              USD ${price * this.state.num_tickets}
             </div>
           </div>
           <button
