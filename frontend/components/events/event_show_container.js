@@ -4,7 +4,7 @@ import { fetchEvent, deleteEvent} from '../../actions/event_actions';
 import { fetchBookmarks, createBookmark, removeBookmark }
  from '../../actions/bookmark_actions';
 import EventShow from './event_show';
-import { createRegistration } from '../../actions/registration_actions';
+import { createRegistration, fetchRegistrations } from '../../actions/registration_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let ticket = {} ;
@@ -34,7 +34,8 @@ const mapDispatchToProps = dispatch => ({
    dispatch(createRegistration(registration)),
   fetchBookmarks: () => dispatch(fetchBookmarks()),
   createBookmark: (eventId) => dispatch(createBookmark(eventId)),
-  removeBookmark: (id) => dispatch(removeBookmark(id))
+  removeBookmark: (id) => dispatch(removeBookmark(id)),
+  fetchRegistrations: () => dispatch(fetchRegistrations())
 });
 
 export default withRouter(connect(mapStateToProps,

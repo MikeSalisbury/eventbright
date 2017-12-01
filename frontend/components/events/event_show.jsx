@@ -11,6 +11,7 @@ class EventShow extends React.Component {
     this.afterOpen = this.afterOpen.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.toggleBookmark = this.toggleBookmark.bind(this);
+    this.renderRegistration = this.renderRegistration.bind(this);
   }
 
   toggleBookmark() {
@@ -30,13 +31,24 @@ class EventShow extends React.Component {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.eventId);
     this.props.fetchBookmarks();
+    this.props.fetchRegistrations();
+  }
+
+  componentDidMount() {
+    this.props.fetchBookmarks();
+    this.props.fetchRegistrations();
   }
 
   componentWillReceiveProps(nextProps) {
-    this.props.fetchBookmarks();
+    // this.props.fetchBookmarks();
     if (this.props.eventId !== nextProps.eventId) {
-      this.props.fetchEvent(nextProps.eventId);
+      nextProps.fetchEvent(nextProps.eventId);
     }
+    if (Object.values(this.props.bookmarks).length !==
+     Object.values(nextProps.bookmarks).length) {
+      nextProps.fetchBookmarks();
+    }
+
   }
 
   componentDidMount() {
@@ -44,6 +56,21 @@ class EventShow extends React.Component {
     if (!this.props.event) {
       this.props.fetchEvent(this.props.eventId);
       this.props.fetchBookmarks();
+    }
+  }
+
+  renderRegistration() {
+    if (this.props.registrations[this.props.eventId]) {
+      return (
+        <div className='show-registration-icon'>
+          <i className="fa fa-calendar" aria-hidden="true"
+            />
+          <h3 className='show-registration-ticket-count'>
+            Tickets: {this.props.registrations[this.props.eventId]
+              .num_tickets}
+            </h3>
+        </div>
+        );
     }
   }
 
@@ -159,10 +186,13 @@ class EventShow extends React.Component {
                   </div>
 
                   <div className='show-divider'>
-                      <span className='show-page-bm'>
-                        <Bookmark bookmarks={bookmarks}
-                          eventId={eventId}
-                          toggleBookmark={this.toggleBookmark} />
+                      <span className='show-page-bm-registration'>
+                        <div className='show-bookmark-container'>
+                          <Bookmark bookmarks={bookmarks}
+                            eventId={eventId}
+                            toggleBookmark={this.toggleBookmark} />
+                        </div>
+                          { this.renderRegistration() }
                       </span>
                       <button className='show-page-tickets-button'
                          onClick={this.openModal}>REGISTER</button>

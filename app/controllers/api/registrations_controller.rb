@@ -4,15 +4,21 @@ class Api::RegistrationsController < ApplicationController
     if logged_in?
       @registrations = current_user.registrations
       render :index
-    else 
+    else
       render json: "you must be logged in"
     end
   end
 
   def create
-    @registration = Registration.new(registration_params)
-    @registration.ticket_id = params[:registration][:ticket_id]
-    @registration.owner_id = current_user.id
+    ticket = Ticket.find(params[:registration][:ticket_id])
+    if current_user.registrations.include?(ticket.id)
+      @registration = Registration.find(current_user.registrations.select {|reg| reg.ticket_id = ticket.id}.id)
+      @registration.num_tickets = params[:registration][:num_tickets]
+    else
+      @registration = Registration.new(registration_params)
+      @registration.ticket_id = ticket.id
+      @registration.owner_id = current_user.id
+    end
     if @registration.save
       render :show
     else
