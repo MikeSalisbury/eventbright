@@ -34,8 +34,8 @@ class EventForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
-    this.props.action(this.state);
+    e.preventDefault();
+    this.props.action(this.state).then(id => this.props.history.push(`/events/${id}`));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -93,6 +93,8 @@ class EventForm extends React.Component {
 
   }
 
+  // <button className='form-publish' onClick={this.handleSubmit}>Publish</button>
+
   render() {
     const { title, description, location, start_datetime, end_datetime,
        img_url, category, event_type, event_topic, ticket } = this.state;
@@ -101,7 +103,6 @@ class EventForm extends React.Component {
 
         <div className='form-header'>
           <h3 className='form-title'>Create An Event</h3>
-          <button className='form-publish' onClick={this.handleSubmit}>Publish</button>
         </div>
 
         <div className='divider'></div>
@@ -149,7 +150,8 @@ class EventForm extends React.Component {
           <label><div className='eventForm-label'>EVENT IMAGE</div>
             <UploadButton
               postImage={this.postImage}
-              imgUrl={this.state.img_url} />
+              imgUrl={this.state.img_url}
+              clearErrors={this.props.clearErrors} />
           </label>
 
           <label><div className='eventForm-label'>EVENT DESCRIPTION</div>
@@ -228,7 +230,7 @@ class EventForm extends React.Component {
                 value='public' /> <span className='privacy-option'>
                 Public page:</span> <span
                 className='privacy-description'>Discoverable by anyone
-                on Eventbrite, our distribution partners, and search
+                on Eventbright, our distribution partners, and search
                 engines.</span>
             </label>
           </div>
@@ -244,7 +246,7 @@ class EventForm extends React.Component {
           </div>
 
 
-          <label><div className='eventForm-label'>EVENT TYPE</div>
+          <label><div className='eventForm-label'>EVENT TYPE (Optional)</div>
             <select onChange={this.update('event_type')}
               className='event-form-dropdown' value={event_type}>
               <option value ="">Select the type of event</option>
@@ -271,7 +273,7 @@ class EventForm extends React.Component {
             </select><br/>
           </label>
 
-          <label><div className='eventForm-label'>EVENT TOPIC</div>
+          <label><div className='eventForm-label'>EVENT TOPIC (Optional)</div>
             <select onChange={this.update('event_topic')}
               className='event-form-dropdown' value={event_topic}>
               <option value="">Select a topic</option>

@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_DEMO_USER }
   from '../actions/session_actions';
+import { RECEIVE_BOOKMARK, REMOVE_BOOKMARK } from '../actions/bookmark_actions';
 import merge from 'lodash/merge';
 
 const _nullUser = { currentUser: null};

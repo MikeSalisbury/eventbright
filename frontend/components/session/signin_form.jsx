@@ -25,12 +25,12 @@ class signinForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
     this.props.emailCheck(this.state);
   }
 
   handleDemo(e) {
-    e.preventDefault;
+    e.preventDefault();
     this.props.demoLogin({email:"ben@fakeemail.com", password:"password"});
     this.props.history.push('/');
   }

@@ -1,0 +1,41 @@
+// source: http://css3.bradshawenterprises.com/cfimg/
+@keyframes cf4FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+#cf4a img:nth-of-type(1) {
+  animation-delay: 15s;
+}
+#cf4a img:nth-of-type(2) {
+  animation-delay: 10s;
+}
+#cf4a img:nth-of-type(3) {
+  animation-delay: 5s;
+}
+#cf4a img:nth-of-type(4) {
+  animation-delay: 0;
+}
+
+
+#cf4a img{
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  position: absolute;
+  left: 0;
+}

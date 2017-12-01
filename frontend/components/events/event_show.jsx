@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import RegistrationModal from '../registrations/registration_modal';
+import Bookmark from '../bookmarks/bookmark';
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -9,22 +10,41 @@ class EventShow extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpen = this.afterOpen.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.toggleBookmark = this.toggleBookmark.bind(this);
+  }
+
+  toggleBookmark() {
+
+    if (this.props.currentUser !== null) {
+      if(this.props.bookmarks[this.props.event.id]) {
+        this.props.removeBookmark(this.props.event.id);
+      } else {
+        debugger;
+        this.props.createBookmark(this.props.event.id);
+      }
+    } else {
+      this.props.history.push('/signin');
+    }
   }
 
   componentWillMount() {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.eventId);
+    this.props.fetchBookmarks();
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.eventId !== nextProps.eventId) {
       this.props.fetchEvent(nextProps.eventId);
+      this.props.fetchBookmarks();
     }
   }
 
   componentDidMount() {
+    window.scroll(0,0);
     if (!this.props.event) {
       this.props.fetchEvent(this.props.eventId);
+      this.props.fetchBookmarks();
     }
   }
 
@@ -41,10 +61,16 @@ class EventShow extends React.Component {
   }
 
   openModal() {
-    this.setState({isOpen: true});
+    if (this.props.currentUser) {
+      this.setState({isOpen: true});
+    } else {
+      this.props.history.push('/signin');
+    }
   }
 
   afterOpen() {
+    window.scrollTo(0, 0);
+
     //this.subtitle.style.color = '#f00';
   }
 
@@ -58,7 +84,7 @@ class EventShow extends React.Component {
 
       const { title, description, location, start_datetime, end_datetime,
          img_url} = this.props.event;
-
+      const { bookmarks, eventId, currentUser } = this.props;
       const startDateTime = new Date(start_datetime).toUTCString();
       const startDay = startDateTime.slice(0, 4).toUpperCase();
       const startDate = startDateTime.slice(5, 7);
@@ -134,8 +160,13 @@ class EventShow extends React.Component {
                   </div>
 
                   <div className='show-divider'>
-                      <span className='show-page-bm'>BM</span>
-                      <button className='show-page-tickets-button' onClick={this.openModal}>REGISTER</button>
+                      <span className='show-page-bm'>
+                        <Bookmark bookmarks={bookmarks}
+                          eventId={eventId}
+                          toggleBookmark={this.toggleBookmark} />
+                      </span>
+                      <button className='show-page-tickets-button'
+                         onClick={this.openModal}>REGISTER</button>
                   </div>
 
                   <div className='event-details'>

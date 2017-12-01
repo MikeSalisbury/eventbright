@@ -9,6 +9,7 @@ class EventIndex extends React.Component {
 
   componentWillMount() {
     this.props.fetchEvents();
+    this.props.fetchBookmarks();
   }
 
   componentDidMount(){
@@ -20,17 +21,22 @@ class EventIndex extends React.Component {
   // }
 
   handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
     this.props.fetchFilteredEvents({category: e.target.value});
     // this.props.history.push(`/events/${e.target.value}`);
   }
 
   render() {
-    const { events } = this.props;
+    const { events, currentUser, bookmarks,
+       createBookmark, removeBookmark } = this.props;
     return(
       <div className='event-index-page'>
-        <div className='large-splash-image-container'>
-          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511715371/outdoors/half_dome.jpg'></img>
+        <div className='large-splash-image-container' id='cf4a'>
+          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511818233/outdoors/redwoods_tour.jpg'></img>
+          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511818057/outdoors/lantern_festival.jpg'></img>
+          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511715474/sports/snowboarding.jpg'></img>
+          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511715142/music%20seeds/club_concert.jpg'></img>
+
         </div>
         <div className='search-bar-over-background-image'>
           Find your next experience
@@ -66,7 +72,14 @@ class EventIndex extends React.Component {
 
 
         <section className='event-index-listings'>
-            {events.map(event => <EventIndexItem key={`event-${event.id}`} event={event}/>)}
+            {events.map(event => <EventIndexItem
+              key={`event-${event.id}`}
+              event={event}
+              currentUser={currentUser}
+              bookmarks={bookmarks}
+              history={this.props.history}
+              createBookmark={createBookmark}
+              removeBookmark={removeBookmark} />)}
         </section>
       </div>
     );

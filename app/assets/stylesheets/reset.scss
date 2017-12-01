@@ -16,6 +16,9 @@ span, article, footer, time, small {
   background: transparent;
 }
 
+html { height: 100%; overflow:auto; }
+body { height: 100%; }
+
 body {
   width: 100%;
   margin: 0;

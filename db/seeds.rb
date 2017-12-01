@@ -22,6 +22,7 @@ e1 = Event.create({organizer_id: mike.id, title: 'Squaw Valley: Ski & Snowboard 
    location: '1960 Squaw Valley Rd, Olympic Valley, CA 96146', start_datetime: '2017-12-01T10:00' ,
    end_datetime: '2018-01-13T22:00', privacy: 'Public'})
    t1 = Ticket.create({event_id: e1.id, name: 'General Ticket', quantity: 100, price: 129})
+   b1 = Bookmark.create({event_id: e1.id, user_id: ben.id})
 
 e2 = Event.create({organizer_id: mike.id, title: 'NBA G League: Santa Cruz Warriors Season Opener!',
    description: 'Come join us at Kaiser Permanente Arena to root for your Santa Cruz Warriors when they open their season against the South Bay Lakers.
@@ -33,6 +34,8 @@ e2 = Event.create({organizer_id: mike.id, title: 'NBA G League: Santa Cruz Warri
    location: '140 Front Street, Santa Cruz, CA 95060', start_datetime: '2018-11-04T18:00' ,
    end_datetime: '2018-11-04T22:00', privacy: 'Public'})
    t2 = Ticket.create({event_id: e2.id, name: 'General Ticket', quantity: 100, price: 50})
+   b2 = Bookmark.create({event_id: e2.id, user_id: ben.id})
+
 
 e3 = Event.create({organizer_id: mike.id, title: 'Football Rivalry Week: Stanford Cardinals vs USC Trojans',
    description: 'Root for your favorite team as we kick off rivalry week!

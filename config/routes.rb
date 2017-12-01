@@ -9,8 +9,8 @@ root to: 'static_pages#root'
     end
     resource :session, only: [:create, :destroy]
     resources :events, only: [:index, :show, :create, :update, :destroy] do
-      resources :bookmarks, only: [:create, :destroy]
     end
+    resources :bookmarks, only: [:index, :create, :destroy]
     resources :registrations, only: [:index, :create, :destroy]
   end
 

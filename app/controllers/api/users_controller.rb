@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
 
+  before_action :require_login, only: [:destroy]
+
     def email
       user = User.find_by(email: params[:email])
       if user

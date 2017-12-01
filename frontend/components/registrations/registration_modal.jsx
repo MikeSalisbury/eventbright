@@ -16,8 +16,18 @@ class RegistrationModal extends React.Component {
     };
   }
 
+  componentWillMount() {
+    console.log('mounted?');
+    window.scrollTo(0, 0);
+  }
+
+  componentDidMount() {
+    console.log('mounted?');
+    window.scrollTo(0, 0);
+  }
+
   handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
     this.props.createRegistration({num_tickets: this.state.num_tickets,
        ticket_id: this.state.id});
     this.props.history.push(`/`);

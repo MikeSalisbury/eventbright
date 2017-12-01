@@ -5,9 +5,9 @@ class Api::RegistrationsController < ApplicationController
     @registration.ticket_id = params[:registration][:ticket_id]
     @registration.owner_id = current_user.id
     if @registration.save
-      render json: @registration
+      render :show
     else
-      render json: @registration.errors.full_messages
+      render json: @registration.errors.full_messages, status: 404
     end
   end
 
