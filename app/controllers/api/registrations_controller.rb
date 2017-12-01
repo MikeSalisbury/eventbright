@@ -11,9 +11,24 @@ class Api::RegistrationsController < ApplicationController
 
   def create
     ticket = Ticket.find(params[:registration][:ticket_id])
-    if current_user.registrations.include?(ticket.id)
-      @registration = Registration.find(current_user.registrations.select {|reg| reg.ticket_id = ticket.id}.id)
-      @registration.num_tickets = params[:registration][:num_tickets]
+    num_tickets = params[:registration][:num_tickets]
+    filtered_registration = current_user.registrations.select {|reg| reg.ticket_id == ticket.id}
+    if !filtered_registration.empty?
+      @registration = Registration.find(filtered_registration[0].id)
+
+      p '--------------------------------------------------------------------------------------'
+      p '--------------------------------------------------------------------------------------'
+      p '--------------------------------------------------------------------------------------'
+      p '--------------------------------------------------------------------------------------'
+      p num_tickets.to_i
+      p @registration.num_tickets
+      p '--------------------------------------------------------------------------------------'
+      p '--------------------------------------------------------------------------------------'
+      p '--------------------------------------------------------------------------------------'
+      p '--------------------------------------------------------------------------------------'
+
+
+      @registration.num_tickets += num_tickets.to_i
     else
       @registration = Registration.new(registration_params)
       @registration.ticket_id = ticket.id

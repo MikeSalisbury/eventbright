@@ -18,11 +18,16 @@ class EventIndex extends React.Component {
   }
 
   componentDidMount(){
+    this.props.fetchBookmarks();
     this.props.fetchEvents();
   }
 
   componentWillReceiveProps(nextProps) {
     // nextProps.fetchEvents();
+      if (this.props.currentUser === null && nextProps.currentUser !== null) {
+        nextProps.fetchBookmarks();
+        nextProps.fetchRegistrations();
+      }
       if (Object.values(nextProps.bookmarks).length
       !== Object.values(this.props.bookmarks).length) {
         nextProps.fetchBookmarks();
