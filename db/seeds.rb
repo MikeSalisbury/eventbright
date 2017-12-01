@@ -81,6 +81,7 @@ e6 = Event.create({organizer_id: ben.id, title: 'Golden Gate Park: Bark in the P
    location: '9th Ave and Lincoln Way San Francisco, CA 94118', start_datetime: '2018-01-14T10:00' ,
    end_datetime: '2018-01-14T18:00', privacy: 'Public'})
    t6 = Ticket.create({event_id: e6.id, name: 'General Ticket', quantity: 100, price: 0})
+   b3 = Bookmark.create({event_id: e6.id, user_id: ben.id})
 
 
 e7 = Event.create({organizer_id: ben.id, title: 'Seminar: Why Dogs are Better than Cats',
@@ -154,6 +155,7 @@ e12 = Event.create({organizer_id: mike.id, title: "The Legend of Zelda: Symphony
    end_datetime: '2017-12-09T22:30', privacy: 'Public'})
    # https://zelda-symphony.com
    t12 = Ticket.create({event_id: e12.id, name: 'General Ticket', quantity: 100, price: 90})
+   b4 = Bookmark.create({event_id: e12.id, user_id: ben.id})
 
 
 e13 = Event.create({organizer_id: mike.id, title: "Love + Propaganda Saturdays w/ Kungs",
@@ -177,6 +179,7 @@ e14 = Event.create({organizer_id: mike.id, title: "Coachella 2018",
   end_datetime: '2017-04-15T22:00', privacy: 'Public'})
   # http://splash.coachella.com/
   t14 = Ticket.create({event_id: e14.id, name: 'General Ticket', quantity: 100, price: 400})
+  b5 = Bookmark.create({event_id: e14.id, user_id: ben.id})
 
 
 e15 = Event.create({organizer_id: christina.id, title: "Weekend Half Dome Hike",
@@ -190,6 +193,7 @@ e15 = Event.create({organizer_id: christina.id, title: "Weekend Half Dome Hike",
   location: 'Yosemite National Park, CA 95389', start_datetime: '2018-01-12T10:00' ,
   end_datetime: '2018-01-14T20:00', privacy: 'Public'})
   t15 = Ticket.create({event_id: e15.id, name: 'General Ticket', quantity: 100, price: 500})
+  b6 = Bookmark.create({event_id: e15.id, user_id: ben.id})
 
 
 e16 = Event.create({organizer_id: christina.id, title: "Lantern Festival",
@@ -203,6 +207,7 @@ e16 = Event.create({organizer_id: christina.id, title: "Lantern Festival",
   location: '1965 S Hwy 95a, Fernley, NV 89408', start_datetime: '2018-09-24T18:00' ,
   end_datetime: '2018-09-24T22:00', privacy: 'Public'})
   t16 = Ticket.create({event_id: e16.id, name: 'General Ticket', quantity: 100, price: 80})
+  b7 = Bookmark.create({event_id: e16.id, user_id: ben.id})
 
 
 e17 = Event.create({organizer_id: christina.id, title: "Walk Among the Giants - Sequoia National Park",
@@ -216,6 +221,7 @@ e17 = Event.create({organizer_id: christina.id, title: "Walk Among the Giants - 
   location: '47050 Generals Highway Three Rivers, CA 93271', start_datetime: '2018-10-02T08:00' ,
   end_datetime: '2018-10-04T20:00', privacy: 'Public'})
   t17 = Ticket.create({event_id: e17.id, name: 'General Ticket', quantity: 100, price: 500})
+  b8 = Bookmark.create({event_id: e17.id, user_id: ben.id})
 
 
 e18 = Event.create({organizer_id: christina.id, title: "Sushi with Jiro!",

@@ -16,28 +16,3 @@
  */
 
 /*event form*/
-.show-page-bm {
-
-}
-
-.event-index-item-bookmark-bar {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.index-bookmark-icon {
-  display: flex;
-  box-sizing: border-box;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  border-left: 1px solid lightgray
-}
-
-.fa-bookmark-o {
-  font-size: 24px;
-}
-
-.fa-bookmark {
-  font-size: 24px;
-}

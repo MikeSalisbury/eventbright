@@ -1,3 +1,24 @@
 // Place all the styles related to the Api::Bookmarks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.event-index-item-bookmark-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.index-bookmark-icon {
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid lightgray
+}
+
+.fa-bookmark-o {
+  font-size: 24px;
+}
+
+.fa-bookmark {
+  font-size: 24px;
+}

@@ -14,7 +14,6 @@ class EventIndexItem extends React.Component {
       if(this.props.bookmarks[this.props.event.id]) {
         this.props.removeBookmark(this.props.event.id);
       } else {
-        debugger;
         this.props.createBookmark(this.props.event.id);
       }
     } else {

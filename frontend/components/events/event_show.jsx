@@ -19,7 +19,6 @@ class EventShow extends React.Component {
       if(this.props.bookmarks[this.props.event.id]) {
         this.props.removeBookmark(this.props.event.id);
       } else {
-        debugger;
         this.props.createBookmark(this.props.event.id);
       }
     } else {
@@ -34,9 +33,9 @@ class EventShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.props.fetchBookmarks();
     if (this.props.eventId !== nextProps.eventId) {
       this.props.fetchEvent(nextProps.eventId);
-      this.props.fetchBookmarks();
     }
   }
 

@@ -1,6 +1,10 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
 
+// if (Object.values(nextProps.bookmarks).length !== Object.values(this.props.bookmarks).length) {
+//   nextProps.fetchBookmarks();
+// }
+
 class EventIndex extends React.Component {
   constructor(props){
     super(props);
@@ -16,9 +20,11 @@ class EventIndex extends React.Component {
     this.props.fetchEvents();
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   nextProps.fetchEvents();
-  // }
+  componentWillReceiveProps(nextProps) {
+    // nextProps.fetchEvents();
+      nextProps.fetchBookmarks();
+
+  }
 
   handleSubmit(e) {
     e.preventDefault();
