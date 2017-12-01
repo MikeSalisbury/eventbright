@@ -1,7 +1,12 @@
 class Api::RegistrationsController < ApplicationController
 
   def index
-    @registrations = current_user.registrations
+    if logged_in?
+      @registrations = current_user.registrations
+      render :index
+    else 
+      render json: "you must be logged in"
+    end
   end
 
   def create

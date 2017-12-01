@@ -1,12 +1,12 @@
 class Api::BookmarksController < ApplicationController
 
   def index
-    @bookmarks = { user_id: "", event_id: "", id: "" }
     if logged_in?
       @bookmarks = current_user.bookmarks
+      render :index
+    else
+      render json: "you must be logged in"
     end
-
-    render :index
   end
 
   def create
