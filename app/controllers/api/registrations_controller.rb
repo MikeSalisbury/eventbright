@@ -15,6 +15,10 @@ class Api::RegistrationsController < ApplicationController
     end
   end
 
+  def destroy
+    @registration = Registration.find_by(id: params[:id])
+  end
+
   private
 
   def registration_params

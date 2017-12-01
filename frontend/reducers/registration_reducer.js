@@ -1,6 +1,7 @@
 import {
    RECEIVE_REGISTRATION,
-    RECEIVE_REGISTRATIONS } from '../actions/registration_actions';
+    RECEIVE_REGISTRATIONS, REMOVE_REGISTRATION }
+     from '../actions/registration_actions';
 import merge from 'lodash/merge';
 
 const registrationReducer = (state = {}, action) => {

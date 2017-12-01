@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   let eventId = ownProps.match.params.eventId;
   let event = state.entities.events[eventId];
   let bookmarks = state.entities.userBookmarks;
+  let registrations = state.entities.userRegistrations;
 
     if (event) {
       ticket = state.entities.events[eventId].ticket;
@@ -20,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
       ticket,
       eventId,
       bookmarks,
+      registrations,
       errors: state.errors.event,
       currentUser: state.session.currentUser
     });
