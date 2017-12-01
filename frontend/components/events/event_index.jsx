@@ -14,6 +14,7 @@ class EventIndex extends React.Component {
   componentWillMount() {
     this.props.fetchEvents();
     this.props.fetchBookmarks();
+    this.props.fetchRegistrations();
   }
 
   componentDidMount(){
@@ -22,7 +23,9 @@ class EventIndex extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     // nextProps.fetchEvents();
+    if (Object.values(nextProps.bookmarks).length !== Object.values(this.props.bookmarks).length) {
       nextProps.fetchBookmarks();
+    }
 
   }
 
@@ -38,10 +41,14 @@ class EventIndex extends React.Component {
     return(
       <div className='event-index-page'>
         <div className='large-splash-image-container' id='cf4a'>
-          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511818233/outdoors/redwoods_tour.jpg'></img>
-          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511818057/outdoors/lantern_festival.jpg'></img>
-          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511715474/sports/snowboarding.jpg'></img>
-          <img className='large-splash-image' src='http://res.cloudinary.com/dckbujmht/image/upload/v1511715142/music%20seeds/club_concert.jpg'></img>
+          <img className='large-splash-image' alt='redwood trees'
+            src='http://res.cloudinary.com/dckbujmht/image/upload/v1511818233/outdoors/redwoods_tour.jpg'></img>
+          <img className='large-splash-image' alt='lantern festival'
+            src='http://res.cloudinary.com/dckbujmht/image/upload/v1511818057/outdoors/lantern_festival.jpg'></img>
+          <img className='large-splash-image' alt='snowboarding'
+            src='http://res.cloudinary.com/dckbujmht/image/upload/v1511818541/food%20and%20drink%20seeds/coffee_tasting.jpg'></img>
+          <img className='large-splash-image' alt='concert in a club'
+            src='http://res.cloudinary.com/dckbujmht/image/upload/v1511715142/music%20seeds/club_concert.jpg'></img>
 
         </div>
         <div className='search-bar-over-background-image'>

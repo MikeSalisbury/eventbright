@@ -21,6 +21,11 @@ export const receiveBookmark = (bookmark) => ({
   bookmark
 });
 
+export const deleteBookmark = (bookmark) => ({
+  type: REMOVE_BOOKMARK,
+  bookmark
+});
+
 
 export const fetchBookmarks = () => dispatch => (
   APIUtil.fetchBookmarks()
@@ -35,5 +40,5 @@ export const createBookmark = (eventId) => dispatch => (
 
 export const removeBookmark = (bookMarkId) => dispatch => (
   APIUtil.removeBookmark(bookMarkId)
-    .then( bookmark => dispatch(receiveBookmark(null)))
+    .then( bookmark => dispatch(deleteBookmark(bookmark)))
 );

@@ -4,15 +4,14 @@ import merge from 'lodash/merge';
 
 const bookmarkReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState;
+  let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_BOOKMARKS:
       return action.bookmarks;
     case RECEIVE_BOOKMARK:
-      newState = merge({}, state);
       return merge(newState, action.bookmark);
     case REMOVE_BOOKMARK:
-      delete newState[action.bookmark.id];
+      delete newState[action.bookmark];
       return newState;
     default:
     return state;

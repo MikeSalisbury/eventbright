@@ -23,7 +23,7 @@ class Api::BookmarksController < ApplicationController
     @bookmark = Bookmark.find_by(event_id: params[:id])
     if @bookmark && @bookmark.user_id == current_user.id
       @bookmark.delete
-      render :show
+      render json: @bookmark.event_id
     else
       render json: ['Bookmark does not exist'], status: 404
     end

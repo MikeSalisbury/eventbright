@@ -21,7 +21,7 @@ export const receiveRegistration = (registration) => ({
 });
 
 export const fetchRegistrations = () => dispatch => (
-  APIUtil.fetchRegistrations
+  APIUtil.fetchRegistrations()
     .then( registrations => dispatch(receiveRegistrations(registrations)),
   err => dispatch(receiveRegistrationErrors(err.responseJSON)))
 );

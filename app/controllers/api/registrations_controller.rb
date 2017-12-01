@@ -1,5 +1,9 @@
 class Api::RegistrationsController < ApplicationController
 
+  def index
+    @registrations = current_user.registrations
+  end
+
   def create
     @registration = Registration.new(registration_params)
     @registration.ticket_id = params[:registration][:ticket_id]
