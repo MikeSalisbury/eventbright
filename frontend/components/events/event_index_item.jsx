@@ -6,6 +6,7 @@ class EventIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.toggleBookmark = this.toggleBookmark.bind(this);
+    this.renderRegistration = this.renderRegistration.bind(this);
   }
 
   toggleBookmark() {
@@ -18,6 +19,21 @@ class EventIndexItem extends React.Component {
       }
     } else {
       this.props.history.push('/signin');
+    }
+  }
+
+  renderRegistration() {
+    if (this.props.registrations[this.props.event.id]) {
+      return (
+        <div className='index-registration-icon'>
+          <i className="fa fa-calendar" aria-hidden="true"
+            />
+          <h3 className='index-registration-ticket-count'>
+            Tickets: {this.props.registrations[this.props.event.id]
+              .num_tickets}
+            </h3>
+        </div>
+        );
     }
   }
 
@@ -54,6 +70,7 @@ render() {
           </div>
           </Link>
           <div className='event-index-item-bookmark-bar'>
+            { this.renderRegistration() }
             <div className='index-bookmark-icon'>
               <Bookmark bookmarks={bookmarks}
                 toggleBookmark={this.toggleBookmark}

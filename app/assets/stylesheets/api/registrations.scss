@@ -1,3 +1,18 @@
 // Place all the styles related to the Api::Registrations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.index-registration-ticket-count {
+  padding: 15px;
+  font-size: 24px;
+}
+
+.index-registration-icon {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.fa-calendar {
+  font-size: 24px;
+}

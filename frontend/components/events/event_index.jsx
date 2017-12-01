@@ -23,9 +23,14 @@ class EventIndex extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     // nextProps.fetchEvents();
-    if (Object.values(nextProps.bookmarks).length !== Object.values(this.props.bookmarks).length) {
-      nextProps.fetchBookmarks();
-    }
+      if (Object.values(nextProps.bookmarks).length
+      !== Object.values(this.props.bookmarks).length) {
+        nextProps.fetchBookmarks();
+      }
+      if (Object.values(nextProps.registrations).length
+      !== Object.values(this.props.registrations).length) {
+        nextProps.fetchRegistrations();
+      }
 
   }
 
@@ -37,7 +42,7 @@ class EventIndex extends React.Component {
 
   render() {
     const { events, currentUser, bookmarks,
-       createBookmark, removeBookmark } = this.props;
+       createBookmark, removeBookmark, registrations } = this.props;
     return(
       <div className='event-index-page'>
         <div className='large-splash-image-container' id='cf4a'>
@@ -92,7 +97,8 @@ class EventIndex extends React.Component {
               bookmarks={bookmarks}
               history={this.props.history}
               createBookmark={createBookmark}
-              removeBookmark={removeBookmark} />)}
+              removeBookmark={removeBookmark}
+              registrations={registrations} />)}
         </section>
       </div>
     );
