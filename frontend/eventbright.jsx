@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
-import { configureStore } from './store/store';
+import configureStore from './store/store';
 import { login, signup, logout, emailCheck, demoLogin} from './actions/session_actions';
 import { fetchEvents, fetchEvent, createEvent } from './actions/event_actions';
 
@@ -9,21 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let store;
   const root = document.getElementById('root');
   if (window.currentUser) {
+    debugger;
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
     store = configureStore();
   }
-  window.store = store;
-  // window.login = login;
-  // window.signup = signup;
-  // window.logout = logout;
-  window.emailCheck = emailCheck;
-  window.dispatch = store.dispatch;
-  window.createEvent = createEvent;
-  window.fetchEvent = fetchEvent;
-  window.fetchEvents = fetchEvents;
-  // window.demoLogin = demoLogin;
+
   ReactDOM.render(<Root store={store}/>, root);
 });
