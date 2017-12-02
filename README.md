@@ -13,11 +13,21 @@ Landing page contains an index of all events with category filter. Splash image 
 ![](https://media.giphy.com/media/l2RnqHpzAdYOYbXTq/giphy.gif)
 ### User Login
 User login features a main signin modal which accepts an email address. If provided email exists in the database, login modal will render otherwise the signup modal will render.
+
+![](https://media.giphy.com/media/26u8yCRFQ1Tczvtzq/giphy.gif)
 ### Event Form
+Event form features a protected route which is only accessible if logged in. The form accepts user input, allows image upload, ticket creation and routes the user to the event show page after event is created.
+![](https://media.giphy.com/media/xUOxf8BZVCRNS6Wk0w/giphy.gif)
 ### Category Filter
+The category filter can be used by users to filter events by a certain category - this filter will render only the events with the selected category to the index page.
+
+![](https://media.giphy.com/media/xUOxfcriYLdNIaoQNO/giphy.gif)
 ### Event Registration and Bookmarking
+Users can bookmark events as a reminder to revisit and purchase tickets/register for an event. Once a user registers for an event, a notification will render with the amount of tickets owned.
+![](https://media.giphy.com/media/xUOxfnecsDCpkovoGI/giphy.gif)
 
 ## Bug/Feature Request
+If you come across any bugs or if you would like a new feature, please provide examples and open a detailed issue [here](https://github.com/MikeSalisbury/eventbright/issues/new).
 
 ## Built With
 
@@ -30,7 +40,7 @@ React/redux used to create/control front end development.
 ### PostGreSQL
 PostGreSQL used to manage database
 ### CSS
-CSS used for full styling
+handrolled CSS used for full styling
 
 ## Future Iterations:
 
