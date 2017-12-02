@@ -5,7 +5,7 @@ class Api::RegistrationsController < ApplicationController
       @registrations = current_user.registrations
       render :index
     else
-      render json: "you must be logged in"
+      render json: "you must be logged in", status: 404
     end
   end
 

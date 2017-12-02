@@ -9,14 +9,18 @@ class EventIndex extends React.Component {
 
   componentWillMount() {
     this.props.fetchEvents();
-    this.props.fetchBookmarks();
-    this.props.fetchRegistrations();
+    if (this.props.currentUser !== null){
+      this.props.fetchBookmarks();
+      this.props.fetchRegistrations();
+    }
   }
 
   componentDidMount(){
-    this.props.fetchBookmarks();
-    this.props.fetchRegistrations();
     this.props.fetchEvents();
+    if (this.props.currentUser !== null){
+      this.props.fetchBookmarks();
+      this.props.fetchRegistrations();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,19 +29,21 @@ class EventIndex extends React.Component {
         nextProps.fetchEvents();
         nextProps.fetchBookmarks();
         nextProps.fetchRegistrations();
+
       }
       // else if (this.props.currentUser !== null && nextProps.currentUser === null) {
       //   nextProps.fetchBookmarks();
       //   nextProps.fetchRegistrations();
       // }
-
-      if (Object.values(nextProps.bookmarks).length
-      !== Object.values(this.props.bookmarks).length) {
-        nextProps.fetchBookmarks();
-      }
-      if (Object.values(nextProps.registrations).length
-      !== Object.values(this.props.registrations).length) {
-        nextProps.fetchRegistrations();
+      if (nextProps.currentUser !== null) {
+        if (Object.values(nextProps.bookmarks).length
+        !== Object.values(this.props.bookmarks).length) {
+          nextProps.fetchBookmarks();
+        }
+        if (Object.values(nextProps.registrations).length
+        !== Object.values(this.props.registrations).length) {
+          nextProps.fetchRegistrations();
+        }
       }
 
   }
