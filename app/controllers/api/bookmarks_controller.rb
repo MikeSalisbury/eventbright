@@ -5,7 +5,7 @@ class Api::BookmarksController < ApplicationController
       @bookmarks = current_user.bookmarks
       render :index
     else
-      render json: "you must be logged in"
+      render json: "you must be logged in", status: 404
     end
   end
 

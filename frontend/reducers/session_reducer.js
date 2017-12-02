@@ -1,6 +1,5 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_DEMO_USER }
+import { LOGOUT_USER, RECEIVE_CURRENT_USER, RECEIVE_DEMO_USER }
   from '../actions/session_actions';
-import { RECEIVE_BOOKMARK, REMOVE_BOOKMARK } from '../actions/bookmark_actions';
 import merge from 'lodash/merge';
 
 const _nullUser = { currentUser: null};
@@ -14,6 +13,9 @@ const sessionReducer = (state = _nullUser, action) => {
       return merge({}, { currentUser });
     case RECEIVE_DEMO_USER:
       currentUser = action.demoUser;
+      return merge({}, { currentUser });
+    case LOGOUT_USER:
+      currentUser = action.currentUser;
       return merge({}, { currentUser });
     default:
       return state;

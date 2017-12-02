@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import SessionForm from './session_form_container';
 
 class signinForm extends React.Component {

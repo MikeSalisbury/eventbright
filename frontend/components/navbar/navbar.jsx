@@ -17,7 +17,7 @@ export default ({currentUser, logout, fetchEvents}) => {
     <div className="rightnav">
       <h3 className='nav'><Link to='/' onClick={fetchEvents}>Browse Events</Link></h3>
       <h3 className='nav nav-help'><Link to='/'>Help</Link></h3>
-      <h3 className='nav'><a href='https://github.com/MikeSalisbury/eventbright'>About</a></h3>      
+      <h3 className='nav'><a href='https://github.com/MikeSalisbury/eventbright'>About</a></h3>
       <h3 className='nav'><Link to='/signin'>Sign In</Link></h3>
       <h3 className='nav create-event'><Link to='/events/new'>
           Create Event</Link></h3>
