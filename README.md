@@ -1,6 +1,6 @@
 # Eventbright
 
-Eventbright is a webapp where organizers can create events and users can browse and register to attend events. The main purpose of Eventbright is to help people socialize and publicize lesser known events. It is built on Ruby on Rails backend, PostgreSQl database, and React.js/flux frontend.
+Eventbright is a webapp where organizers can create events and users can browse and register to attend events. The main purpose of Eventbright is to help people socialize and publicize lesser known events. It is built with a Ruby on Rails backend, PostgreSQl database, and React.js/Redux frontend.
 
 ## Demo
 
