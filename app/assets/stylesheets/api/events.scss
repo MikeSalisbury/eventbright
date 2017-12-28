@@ -256,6 +256,7 @@ color: #363A43;
   display: block;
   margin-left: 103.6px;
   margin-right: 103.6px;
+  margin-bottom: 70px;
 }
 
 .event-index-item-start {
@@ -347,7 +348,7 @@ color: #363A43;
 
 .event-show-title-date {
   display: block;
-  width: 345px;
+  width: 100%;
   height: 340px;
   background-color: #F5F5F5;
   padding: 25px;
@@ -546,6 +547,16 @@ color: #363A43;
   flex-direction: column;
 }
 
+.category-index-filter {
+  font-size: 20px;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.category-index-filter:hover {
+  cursor: pointer;
+}
+
 .music-index-filter {
   background-color: #F6682F;
   padding: 10px;
@@ -612,7 +623,7 @@ color: #363A43;
   font-size: 20px;
   margin: 10px;
   border-radius: 5px;
-  
+
 }
 
 /*registration modal*/
@@ -754,4 +765,86 @@ color: #363A43;
   justify-content: space-between;
   align-items: center;
   width: 40%;
+}
+
+.category-filter-title {
+  font-size: 40px;
+  color: #0278b8;
+}
+
+.browse-events-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.browse-events-category-search {
+  width: 30%;
+  height: 500px;
+  border: 1px solid #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: white;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  margin: 10px;
+  padding: 20px;
+  /*position: fixed;*/
+}
+
+.browse-events-index {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.browse-event-index-item {
+  width: 90%;
+  height: 200px;
+  display: flex;
+  padding: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.browse-event-index-item-image-container {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.browse-event-index-item-image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.browse-event-index-details-box {
+  height: 60%;
+  border: 1px solid lightgray;
+  letter-spacing: 1px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.browse-event-link-box {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.browse-event-index-item-detail-box{
+  width: 200%;
+  background-color: white;
+
+}
+
+.browse-event-index-item-bookmark-bar {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  height: 40%;
+  background-color: white;
+
 }
