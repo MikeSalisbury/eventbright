@@ -5,6 +5,7 @@ import NavBarContainer from './navbar/navbar_container';
 import EventFormContainer from './events/event_form_container';
 import EventShowContainer from './events/event_show_container';
 import EventIndexContainer from './events/event_index_container';
+import BrowseEvents from './events/browse_events';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
@@ -17,6 +18,7 @@ const App = ({store}) => (
       <AuthRoute exact path='/signin/login' component={SessionContainer} />
       <Route exact path='/signin/signup' component={SessionContainer} />
       <ProtectedRoute exact path='/events/new' component={EventFormContainer}/>
+      <Route exact path='/events/browse' component = {BrowseEvents} />
       <Route exact path='/events/:eventId/edit'
         component={EventFormContainer} />
       <Route exact path='/events/:eventId'

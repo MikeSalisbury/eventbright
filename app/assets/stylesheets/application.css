@@ -16,3 +16,21 @@
  */
 
 /*event form*/
+.browse-events-container {
+  display: flex;
+}
+
+.browse-events-category-search {
+  width: 30%;
+  height: 500px;
+  /*border: 1px solid black;*/
+  display: flex;
+  /*position: fixed;*/
+}
+
+.browse-events-index {
+  width: 70%;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+}

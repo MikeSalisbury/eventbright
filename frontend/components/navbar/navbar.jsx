@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default ({currentUser, logout, fetchEvents}) => {
   const nav = currentUser ? (
     <div className="rightnav">
-        <h3 className='nav'><Link to='/' onClick={fetchEvents}>Browse Events</Link></h3>
+        <h3 className='nav'><Link to='/events/browse' onClick={fetchEvents}>Browse Events</Link></h3>
         <h3 className='nav nav-help'><Link to='/'>Help</Link></h3>
         <h3 className='nav'><a href='https://github.com/MikeSalisbury/eventbright'>About</a></h3>
         <h3 className='nav'><Link to='/'>User</Link></h3>

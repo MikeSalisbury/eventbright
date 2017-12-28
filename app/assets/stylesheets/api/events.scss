@@ -202,7 +202,7 @@ color: #363A43;
 
 .large-splash-image-container {
   display: flex;
-  height: 400px;
+  height: 500px;
   position: relative;
   justify-content: center;
   overflow: hidden;
@@ -231,7 +231,7 @@ color: #363A43;
 .event-index-item {
   display: inline-block;
   width: 33.33%;
-  height: 340px;
+  // height: 340px;
   padding: 15px;
   /*white-space: nowrap;*/
   overflow: hidden;
@@ -242,12 +242,12 @@ color: #363A43;
 .event-index-item-image-container {
   width: 100%;
   overflow: hidden;
-  height: 153.66px;
+  height: 250px;
 }
 
 .event-index-item-image {
   object-fit: cover;
-  height: 153.66px;
+  height: 250px;
 
 }
 
@@ -543,6 +543,7 @@ color: #363A43;
   margin-top: 15px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .music-index-filter {
@@ -551,6 +552,7 @@ color: #363A43;
   color: white;
   font-size: 20px;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .food-and-drink-index-filter {
@@ -559,6 +561,7 @@ color: #363A43;
   color: white;
   font-size: 20px;
   margin: 10px;
+  border-radius: 5px;
 
 }
 
@@ -568,6 +571,7 @@ color: #363A43;
   color: white;
   font-size: 20px;
   margin: 10px;
+  border-radius: 5px;
 
 }
 
@@ -577,6 +581,7 @@ color: #363A43;
   color: white;
   font-size: 20px;
   margin: 10px;
+  border-radius: 5px;
 
 }
 
@@ -586,6 +591,7 @@ color: #363A43;
   color: white;
   font-size: 20px;
   margin: 10px;
+  border-radius: 5px;
 
 }
 
@@ -595,6 +601,7 @@ color: #363A43;
   color: white;
   font-size: 20px;
   margin: 10px;
+  border-radius: 5px;
 
 }
 
@@ -604,7 +611,8 @@ color: #363A43;
   color: white;
   font-size: 20px;
   margin: 10px;
-
+  border-radius: 5px;
+  
 }
 
 /*registration modal*/
