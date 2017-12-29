@@ -1,0 +1,42 @@
+.linkedin-github {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  padding: 5px;
+  height: 62px;
+  box-sizing: border-box;
+}
+
+.linkedin {
+  background: url('http://res.cloudinary.com/dckbujmht/image/upload/v1514449620/linkedin_zw0czp.png');
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.linkedin:hover {
+  border: 1px solid yellow;
+  opacity: .8;
+}
+
+.github {
+  background: url('http://res.cloudinary.com/dckbujmht/image/upload/v1514449667/github-mark_sk8adc.png');
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.github:hover {
+  border: 1px solid yellow;
+  opacity: .8;
+
+}

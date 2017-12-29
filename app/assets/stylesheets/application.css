@@ -15,51 +15,41 @@
  *= require_self
  */
 
-/*.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  height: 62px;
-}*/
+ .user-profile-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 70px;
+ }
 
-.linkedin-github {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
+.user-profile-name {
+  height: 20%;
+  font-size: 50px;
   background-color: white;
   width: 100%;
-  padding: 5px;
+  display: flex;
+  justify-content: center;
 }
 
-.linkedin {
-  background: url('http://res.cloudinary.com/dckbujmht/image/upload/v1514449620/linkedin_zw0czp.png');
-  background-position: center;
-  width: 65px;
-  height: 65px;
-  background-size: cover;
-  border-radius: 5px;
+.user-profile-tabs {
+  /*border: 1px solid black;*/
+  height: 20%;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.linkedin:hover {
-  border: 1px solid blue;
-  opacity: .8;
+.user-tab-button {
+  padding: 15px;
+  margin: 15px;
 }
 
-.github {
-  background: url('http://res.cloudinary.com/dckbujmht/image/upload/v1514449667/github-mark_sk8adc.png');
-  background-position: center;
-  width: 65px;
-  height: 65px;
-  background-size: cover;
-  border-radius: 50%;
-}
-
-.github:hover {
-  border: 1px solid yellow;
-  opacity: .8;
-
+.user-event-index {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
 }
