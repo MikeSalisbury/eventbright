@@ -1,5 +1,5 @@
 import React from 'react';
-import BrowseEventsIndexItem from '../events/browse_events_index_item';
+import UserEventsIndexItem from './user_events_index_item';
 
 class UserOrganizedEvents extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class UserOrganizedEvents extends React.Component {
     }
     return(
       <div className='user-event-index'>
-        {organizedEvents.map(event => <BrowseEventsIndexItem
+        {organizedEvents.map(event => <UserEventsIndexItem
           currentUser={currentUser}
           bookmarks={bookmarks}
           registrations={registrations}
