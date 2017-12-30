@@ -7,7 +7,7 @@ class UserOrganizedEvents extends React.Component {
   }
 
   render() {
-    const { bookmarks, events, registrations, currentUser } = this.props;
+    const { bookmarks, events, registrations, currentUser, createBookmark, removeBookmark } = this.props;
     let organizedEvents = [];
     for(let i = 0; i < events.length; i++) {
       if (currentUser.id === events[i].organizer_id) {
@@ -15,12 +15,14 @@ class UserOrganizedEvents extends React.Component {
       }
     }
     return(
-      <div>
+      <div className='user-event-index'>
         {organizedEvents.map(event => <BrowseEventsIndexItem
           currentUser={currentUser}
           bookmarks={bookmarks}
           registrations={registrations}
           event={event}
+          createBookmark={createBookmark}
+          removeBookmark={removeBookmark}
           />)}
         </div>
     );

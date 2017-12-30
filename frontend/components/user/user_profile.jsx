@@ -53,7 +53,8 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    const { currentUser, registrations, bookmarks, events } = this.props;
+    const { currentUser, registrations, bookmarks, events,
+      createBookmark, removeBookmark } = this.props;
     const { tab } = this.state;
     let tabComponent;
     if (tab === '') {
@@ -64,20 +65,26 @@ class UserProfile extends React.Component {
         bookmarkKeys={Object.keys(bookmarks)}
         bookmarks={bookmarks}
         registrations={registrations}
-        events={events}/>;
+        events={events}
+        createBookmark={createBookmark}
+        removeBookmark={removeBookmark}/>;
     } else if (tab === 'UserRegistrations') {
       tabComponent = <UserRegistrations
         currentUser={currentUser}
         registrationKeys={Object.keys(registrations)}
         registrations={registrations}
         bookmarks={bookmarks}
-        events={events}/>;
+        events={events}
+        createBookmark={createBookmark}
+        removeBookmark={removeBookmark}/>;
     } else if (tab === 'UserOrganizedEvents') {
       tabComponent = <UserOrganizedEvents
         currentUser={currentUser}
         registrations={registrations}
         bookmarks={bookmarks}
-        events={Object.values(events)}/>;
+        events={Object.values(events)}
+        createBookmark={createBookmark}
+        removeBookmark={removeBookmark}/>;
     }
 
     if (currentUser !== null) {
@@ -98,7 +105,7 @@ class UserProfile extends React.Component {
               onClick={this.handleSubmit}
               value='UserOrganizedEvents'>Organized Events</button>
           </div>
-          <div className='user-event-index'>
+          <div className='user-event-index-container'>
             {tabComponent}
           </div>
         </div>

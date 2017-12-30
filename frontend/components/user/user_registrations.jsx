@@ -7,18 +7,20 @@ class UserRegistrations extends React.Component {
   }
 
   render() {
-    const { bookmarks, events, registrations, registrationKeys, currentUser } = this.props;
+    const { bookmarks, events, registrations, registrationKeys, currentUser, createBookmark, removeBookmark } = this.props;
     let registeredEvents = [];
     for(let i = 0; i < registrationKeys.length; i++) {
       registeredEvents.push(events[registrationKeys[i]]);
     }
     return(
-      <div>
+      <div className='user-event-index'>
         {registeredEvents.map(event => <BrowseEventsIndexItem
           currentUser={currentUser}
           bookmarks={bookmarks}
           registrations={registrations}
           event={event}
+          createBookmark={createBookmark}
+          removeBookmark={removeBookmark}
           />)}
         </div>
     );

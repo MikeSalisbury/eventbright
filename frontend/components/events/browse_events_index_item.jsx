@@ -34,6 +34,16 @@ class BrowseEventsIndexItem extends React.Component {
             </h3>
         </div>
         );
+    } else {
+      return (
+        <div className='index-registration-icon'>
+          <i className="fa fa-calendar" aria-hidden="true"
+            />
+          <h3 className='index-registration-ticket-count'>
+            Tickets: 0
+            </h3>
+        </div>
+      );
     }
   }
 
