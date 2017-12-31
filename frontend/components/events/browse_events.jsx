@@ -61,6 +61,9 @@ class BrowseEvents extends React.Component {
     return(
       <div className='browse-events-container'>
         <div className='browse-events-category-search'>
+          <div className='map'>
+            
+          </div>
           <h3 className='category-filter-title'>Category</h3>
           <div className = 'event-index-filters'>
             <button
