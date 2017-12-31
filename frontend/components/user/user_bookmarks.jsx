@@ -12,18 +12,26 @@ class UserBookmarks extends React.Component {
     for(let i = 0; i < bookmarkKeys.length; i++) {
       bookmarkedEvents.push(events[bookmarkKeys[i]]);
     }
-    return(
-      <div className='user-event-index'>
-        {bookmarkedEvents.map(event => <UserEventsIndexItem
-          currentUser={currentUser}
-          bookmarks={bookmarks}
-          registrations={registrations}
-          event={event}
-          createBookmark={createBookmark}
-          removeBookmark={removeBookmark}
-          />)}
-        </div>
-    );
+    console.log(bookmarkKeys);
+    console.log(events);
+
+    if (bookmarks !== []) {
+      return(
+        <div className='user-event-index'>
+          {bookmarkedEvents.map(event => <UserEventsIndexItem
+            currentUser={currentUser}
+            bookmarks={bookmarks}
+            registrations={registrations}
+            event={event}
+            createBookmark={createBookmark}
+            removeBookmark={removeBookmark}
+            />)}
+          </div>
+        );
+    } else {
+      return 'loading';
+    }
+
   }
 
 }

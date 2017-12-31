@@ -8,7 +8,7 @@ import { fetchRegistrations } from '../../actions/registration_actions';
 
 const mapStateToProps = state => {
   return({
-  events: Object.values(state.entities.events),
+  events: state.entities.events,
   currentUser: state.session.currentUser,
   bookmarks: state.entities.userBookmarks,
   registrations: state.entities.userRegistrations
