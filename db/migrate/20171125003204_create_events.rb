@@ -5,6 +5,8 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :title, null: false
       t.string :description, null: false
       t.string :location, null: false
+      t.float :lat, null: false
+      t.float :lng, null: false
       t.datetime :start_datetime, null: false
       t.datetime :end_datetime, null: false
       t.string :img_url, null: false

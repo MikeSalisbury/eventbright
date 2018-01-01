@@ -3,7 +3,8 @@ class Event < ApplicationRecord
     'Sports & Wellness', 'Networking']
 
   validates :title, :description, :location, :start_datetime,
-   :end_datetime, :img_url, :category, :privacy, presence: true
+   :end_datetime, :img_url, :category, :privacy, :lat, :lng,
+    presence: true
   # validates :privacy, inclusion: { in: ['private, public'], message:
   #   "%{value} is not a valid privacy filter"}
   validates :category, inclusion: { in: CATEGORIES, message:

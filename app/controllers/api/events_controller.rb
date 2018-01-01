@@ -46,6 +46,9 @@ class Api::EventsController < ApplicationController
     ticket_params[:name] = params[:event][:ticket][:name]
     ticket_params[:quantity] = params[:event][:ticket][:quantity]
     ticket_params[:price] = params[:event][:ticket][:price]
+
+    geocoder = new google.maps.Geocoder
+
     if @event.save
       @ticket = Ticket.new(ticket_params)
       @ticket.event_id = @event.id
@@ -89,7 +92,7 @@ class Api::EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :description, :location,
-      :start_datetime, :end_datetime, :img_url, :category, :privacy,
+      :start_datetime, :end_datetime, :img_url, :lat, :lng, :category, :privacy,
       :event_type, :event_topic, ticket:[])
   end
 
