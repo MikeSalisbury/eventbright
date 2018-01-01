@@ -5,17 +5,19 @@ export default class MarkerManager {
   }
 
   createMarkerFromEvent(event) {
+    const position = new google.maps.LatLng(event.lat, event.lng);
     const marker = new google.maps.Marker({
-      position: {},
+      position,
       map: this.map,
       title: event.title
     });
+
   }
 
   updateMarkers(events) {
     for(let i = 0; i < events.length; i++) {
       if (this.markers[events[i].id] !== null) {
-        this.markers[events[i].id] = events[i];
+        this.markers[events[i].id] = this.createMarkerFromEvent(event);
       }
     }
   }
