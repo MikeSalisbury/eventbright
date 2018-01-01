@@ -30,13 +30,17 @@ class EventShow extends React.Component {
   componentWillMount() {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.eventId);
-    this.props.fetchBookmarks();
-    this.props.fetchRegistrations();
+    if (this.props.currentUser !== null) {
+      this.props.fetchBookmarks();
+      this.props.fetchRegistrations();
+    }
   }
 
   componentDidMount() {
-    this.props.fetchBookmarks();
-    this.props.fetchRegistrations();
+    if (this.props.currentUser !== null) {
+      this.props.fetchBookmarks();
+      this.props.fetchRegistrations();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -60,7 +64,9 @@ class EventShow extends React.Component {
     window.scroll(0,0);
     if (!this.props.event) {
       this.props.fetchEvent(this.props.eventId);
-      this.props.fetchBookmarks();
+      if (this.props.currentUser !== null) {
+        this.props.fetchBookmarks();
+      }
     }
   }
 

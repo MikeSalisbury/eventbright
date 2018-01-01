@@ -1,5 +1,6 @@
 import React from 'react';
 import BrowseEventsIndexItem from './browse_events_index_item';
+import EventMap from '../map/event_map';
 
 class BrowseEvents extends React.Component {
 
@@ -61,8 +62,8 @@ class BrowseEvents extends React.Component {
     return(
       <div className='browse-events-container'>
         <div className='browse-events-category-search'>
-          <div className='map'>
-            
+          <div className='map-container'>
+            <EventMap events={events}/>
           </div>
           <h3 className='category-filter-title'>Category</h3>
           <div className = 'event-index-filters'>

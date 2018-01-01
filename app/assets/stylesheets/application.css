@@ -15,8 +15,13 @@
  *= require_self
  */
 
-.map {
+.map-container {
   height: 100%;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid lightgray;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
 }
