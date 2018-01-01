@@ -58,12 +58,12 @@ class BrowseEvents extends React.Component {
 
   render() {
     const { events, currentUser, bookmarks,
-       createBookmark, removeBookmark, registrations } = this.props;
+       createBookmark, removeBookmark, registrations, history } = this.props;
     return(
       <div className='browse-events-container'>
         <div className='browse-events-category-search'>
           <div className='map-container'>
-            <EventMap events={events}/>
+            <EventMap events={events} history={history}/>
           </div>
           <h3 className='category-filter-title'>Category</h3>
           <div className = 'event-index-filters'>

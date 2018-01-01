@@ -47,8 +47,6 @@ class Api::EventsController < ApplicationController
     ticket_params[:quantity] = params[:event][:ticket][:quantity]
     ticket_params[:price] = params[:event][:ticket][:price]
 
-    geocoder = new google.maps.Geocoder
-
     if @event.save
       @ticket = Ticket.new(ticket_params)
       @ticket.event_id = @event.id
