@@ -12,8 +12,6 @@ class UserBookmarks extends React.Component {
     for(let i = 0; i < bookmarkKeys.length; i++) {
       bookmarkedEvents.push(events[bookmarkKeys[i]]);
     }
-    console.log(bookmarkKeys);
-    console.log(events);
 
     if (bookmarks !== []) {
       return(
