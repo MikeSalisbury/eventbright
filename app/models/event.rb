@@ -3,7 +3,7 @@ class Event < ApplicationRecord
     'Sports & Wellness', 'Networking']
 
   validates :title, :description, :location, :start_datetime,
-   :end_datetime, :img_url, :category, :privacy,
+   :end_datetime, :img_url, :category, :privacy, :lat, :lng,
     presence: true
   # validates :privacy, inclusion: { in: ['private, public'], message:
   #   "%{value} is not a valid privacy filter"}
@@ -11,7 +11,7 @@ class Event < ApplicationRecord
     "%{value} is not a valid category" }
 
   geocoded_by :location, latitude: :lat, longitude: :lng
-  after_validation :geocode
+  before_validation :geocode
    # if: ->(obj){ obj.location.present? and obj.location_changed? }
 
   belongs_to :organizer,
