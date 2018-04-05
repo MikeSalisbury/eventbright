@@ -31,7 +31,6 @@ gem 'jquery-rails'
 gem 'figaro'
 gem "font-awesome-rails"
 gem 'geocoder'
-gem 'rspec_junit_formatter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -47,6 +46,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   gem 'rspec'
+  gem 'rspec_junit_formatter'
 end
 
 group :development do
