@@ -25,3 +25,8 @@
   height: 500px;
   width: 100%;
 }
+
+.searchBar {
+  width: 80%;
+  background-color: lightgray;
+}

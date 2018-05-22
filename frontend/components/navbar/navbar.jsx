@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Search from '../search/search_container';
 
 export default ({currentUser, logout, fetchEvents}) => {
   const nav = currentUser ? (
@@ -29,6 +29,7 @@ export default ({currentUser, logout, fetchEvents}) => {
       <div>
         <Link to='/' onClick={fetchEvents}><h1 className="logo">Eventbright</h1></Link>
       </div>
+      <Search />
       <div>
         {nav}
       </div>
