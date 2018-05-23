@@ -27,6 +27,8 @@
 }
 
 .searchBar {
-  width: 80%;
-  background-color: lightgray;
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+  font-size: 30px;
 }
