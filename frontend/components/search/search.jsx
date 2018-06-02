@@ -19,6 +19,8 @@ class Search extends React.Component {
       let headerChild = document.querySelector('header ul');
       if (headerChild) {
         header.removeChild(headerChild);
+      } else {
+        console.log(headerChild);
       }
 
       let ul = document.createElement('ul');
@@ -32,9 +34,13 @@ class Search extends React.Component {
   }
 
   filterByLocation(value) {
-    let regex = new RegExp(value, 'gi');
-    let matches = this.props.events.filter(event => event.location.match(regex) || event.title.match(regex) || event.category.match(regex));
-    return matches;
+    if(value) {
+      let regex = new RegExp(value, 'gi');
+      let matches = this.props.events.filter(event => event.location.match(regex) || event.title.match(regex) || event.category.match(regex));
+      return matches;
+    } else {
+      return [];
+    }
   }
 
   render(){
