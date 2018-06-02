@@ -14,7 +14,15 @@ class Search extends React.Component {
   handleUpdate(e) {
       this.setState({text: e.target.value});
       let locationMatches = this.filterByLocation(e.target.value);
-      console.log(locationMatches);
+      let searchBar = document.querySelector('#searchBar');
+      let ul = document.createElement('ul');
+      searchBar.appendChild(ul);
+      locationMatches.forEach(event => {
+        let li = document.createElement('li');
+        li.innerText = event.title;
+        li.classList.add('searchResult');
+        ul.appendChild(li);
+      });
   }
 
   filterByLocation(value) {
@@ -25,7 +33,7 @@ class Search extends React.Component {
 
   render(){
     return(
-      <input type='text' className='searchBar' placeholder='Search for Event by name or location' value={this.state.text} onKeyUp={this.handleUpdate} onChange={this.handleUpdate}/>
+      <input type='text' id='searchBar' placeholder='Search for Event by name or location' value={this.state.text} onKeyUp={this.handleUpdate} onChange={this.handleUpdate}/>
     );
   }
 

@@ -26,9 +26,16 @@
   width: 100%;
 }
 
-.searchBar {
+#searchBar {
   width: 50%;
   background-color: white;
   padding: 20px;
   font-size: 30px;
+}
+
+.searchResult {
+  border: 1px solid black;
+  font-size: 15px;
+  padding: 15px;
+  
 }
