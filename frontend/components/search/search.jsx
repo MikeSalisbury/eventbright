@@ -14,9 +14,15 @@ class Search extends React.Component {
   handleUpdate(e) {
       this.setState({text: e.target.value});
       let locationMatches = this.filterByLocation(e.target.value);
-      let searchBar = document.querySelector('#searchBar');
+      let header = document.querySelector('header');
+      // let searchBar = document.querySelector('#searchBar');
+      let headerChild = document.querySelector('header ul');
+      if (headerChild) {
+        header.removeChild(headerChild);
+      }
+
       let ul = document.createElement('ul');
-      searchBar.appendChild(ul);
+      header.appendChild(ul);
       locationMatches.forEach(event => {
         let li = document.createElement('li');
         li.innerText = event.title;
