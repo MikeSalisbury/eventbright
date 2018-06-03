@@ -32,7 +32,7 @@ class Search extends React.Component {
         li.classList.add('searchResult');
         li.addEventListener('click', () => {
           this.props.history.push(`/events/${event.id}`);
-
+          this.setState({text: ""});
           header.removeChild(document.querySelector('header ul'));
         });
 
