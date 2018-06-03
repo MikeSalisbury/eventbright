@@ -13,9 +13,9 @@ class Search extends React.Component {
 
   handleUpdate(e) {
       this.setState({text: e.target.value});
-      let locationMatches = this.filterByLocation(e.target.value);
+      let locationMatches = this.filterEvents(e.target.value);
+
       let header = document.querySelector('header');
-      // let searchBar = document.querySelector('#searchBar');
       let headerChild = document.querySelector('header ul');
       if (headerChild) {
         header.removeChild(headerChild);
@@ -25,15 +25,22 @@ class Search extends React.Component {
 
       let ul = document.createElement('ul');
       header.appendChild(ul);
+
       locationMatches.forEach(event => {
         let li = document.createElement('li');
         li.innerText = event.title;
         li.classList.add('searchResult');
+        li.addEventListener('click', () => {
+          this.props.history.push(`/events/${event.id}`);
+
+          header.removeChild(document.querySelector('header ul'));
+        });
+
         ul.appendChild(li);
       });
   }
 
-  filterByLocation(value) {
+  filterEvents(value) {
     if(value) {
       let regex = new RegExp(value, 'gi');
       let matches = this.props.events.filter(event => event.location.match(regex) || event.title.match(regex) || event.category.match(regex));

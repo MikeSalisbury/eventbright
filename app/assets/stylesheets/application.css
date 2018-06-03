@@ -31,11 +31,32 @@
   background-color: white;
   padding: 20px;
   font-size: 30px;
+  margin-left: 10px;
 }
 
 .searchResult {
-  border: 1px solid black;
   font-size: 15px;
   padding: 15px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  border-bottom: 1px solid #F5F5F5;
   
+}
+
+.searchResult:nth-child(even) {
+  transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+}
+
+.searchResult:nth-child(odd) {
+  transform: perspective(100px) rotateX(-3deg) translateY(3px);
+}
+
+header ul{
+  position: absolute;
+  top: 59px;
+  left: 10%;
+  z-index: 1;
 }
