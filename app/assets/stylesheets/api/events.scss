@@ -247,7 +247,6 @@ color: #363A43;
 }
 
 .event-index-item-image {
-  // object-fit: cover;
   height: 250px;
 
 }
@@ -344,7 +343,7 @@ color: #363A43;
   display: block;
   width: 70%;
   height: 340px;
-  // object-fit:cover;
+  object-fit: none;
 }
 
 .event-show-title-date {
