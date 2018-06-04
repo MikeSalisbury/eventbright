@@ -10,7 +10,6 @@ import UserProfileContainer from './user/user_profile_container';
 import Footer from './footer/footer';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
-
 const App = ({store}) => (
   <div>
     <Route path='/' component={NavBarContainer} />
