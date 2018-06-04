@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchEvent, deleteEvent} from '../../actions/event_actions';
+import { fetchEvent, deleteEvent, fetchEvents } from '../../actions/event_actions';
 import { fetchBookmarks, createBookmark, removeBookmark }
  from '../../actions/bookmark_actions';
 import EventShow from './event_show';
@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
       ticket = state.entities.events[eventId].ticket;
     }
     return ({
+      events: state.entities.events,
       event,
       ticket,
       eventId,
@@ -28,6 +29,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 
 const mapDispatchToProps = dispatch => ({
+  fetchEvents: () => dispatch(fetchEvents()),
   fetchEvent: eventId => dispatch(fetchEvent(eventId)),
   deleteEvent: eventId => dispatch(deleteEvent(eventId)),
   createRegistration: registration =>

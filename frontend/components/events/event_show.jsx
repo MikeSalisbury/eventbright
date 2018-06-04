@@ -36,13 +36,6 @@ class EventShow extends React.Component {
     }
   }
 
-  componentDidMount() {
-    if (this.props.currentUser !== null) {
-      this.props.fetchBookmarks();
-      this.props.fetchRegistrations();
-    }
-  }
-
   componentWillReceiveProps(nextProps) {
     // this.props.fetchBookmarks();
     if (this.props.eventId !== nextProps.eventId) {
@@ -62,13 +55,23 @@ class EventShow extends React.Component {
 
   componentDidMount() {
     window.scroll(0,0);
+    this.props.fetchEvents();
+    console.log(this.props);
     if (!this.props.event) {
       this.props.fetchEvent(this.props.eventId);
       if (this.props.currentUser !== null) {
         this.props.fetchBookmarks();
+        this.props.fetchRegistrations();
       }
     }
   }
+
+  // componentDidMount() {
+  //   if (this.props.currentUser !== null) {
+  //     this.props.fetchBookmarks();
+  //     this.props.fetchRegistrations();
+  //   }
+  // }
 
   renderRegistration() {
     if (this.props.registrations[this.props.eventId]) {
